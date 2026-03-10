@@ -39,6 +39,19 @@
   }
 }
 </script>
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="apple-touch-icon" href="logo.png">
+
+<!-- Google Analytics GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://assets.calendly.com">
 <link rel="preconnect" href="https://calendly.com">
@@ -82,7 +95,9 @@ nav {
   transition:background 0.3s, padding 0.3s;
 }
 nav.scrolled { padding:16px 56px; background:rgba(8,8,8,0.96); }
-.nav-brand { text-decoration:none; display:flex; flex-direction:column; gap:2px; }
+.nav-brand { text-decoration:none; display:flex; flex-direction:row; align-items:center; gap:14px; }
+.nav-logo { height:40px; width:40px; object-fit:contain; flex-shrink:0; }
+.nav-brand-text { display:flex; flex-direction:column; gap:2px; }
 .nav-brand-main { font-family:'Syne', var(--mono), sans-serif; font-size:24px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; color:#f4f1eb; }
 .nav-brand-sub { font-family:var(--mono); font-size:16px; letter-spacing:0.2em; color:var(--gold); text-transform:uppercase; }
 .nav-links { display:flex; gap:40px; list-style:none; align-items:center; }
@@ -319,8 +334,11 @@ footer { border-top:1px solid var(--border); padding:40px; display:flex; justify
 <!-- NAV -->
 <nav id="mainNav">
   <a href="index.html" class="nav-brand">
-    <span class="nav-brand-main">Precision 3D Technologies</span>
-    <span class="nav-brand-sub">Custom 3D Configurators</span>
+    <img class="nav-logo" src="logo.png" alt="Precision 3D Technologies logo">
+    <div class="nav-brand-text">
+      <span class="nav-brand-main">Precision 3D Technologies</span>
+      <span class="nav-brand-sub">Custom 3D Configurators</span>
+    </div>
   </a>
   <ul class="nav-links">
     <li><a href="index.html#configurators">Demos</a></li>

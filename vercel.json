@@ -1,7 +1,8 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
-  "error": [
-    { "statusCode": 404, "destination": "/404.html" }
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "/404.html", "status": 404 }
   ]
 }

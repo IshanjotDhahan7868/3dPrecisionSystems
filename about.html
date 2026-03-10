@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Precision 3D Technologies</title>
+<meta name="description" content="Precision 3D Technologies is a boutique 3D configurator studio founded by Ishanjot Dhahan in Toronto. We build interactive product experiences that close more deals.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://3dprecisionsystems.vercel.app/about">
+<link rel="icon" type="image/png" href="logo.png">
+<meta property="og:title" content="About — Precision 3D Technologies">
+<meta property="og:description" content="The studio behind 12+ 3D configurators for B2B product businesses across North America.">
+<meta property="og:image" content="https://3dprecisionsystems.vercel.app/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --black:#080808;--surface:#0f0f0f;--surface2:#151a20;--surface3:#1c222c;
+  --grey-border:rgba(255,255,255,0.08);--border:rgba(255,255,255,0.07);--border-bright:rgba(255,255,255,0.15);
+  --gold:#c9a96e;--gold-dim:rgba(201,169,110,0.12);
+  --white:#f4f1eb;--white-dim:rgba(244,241,235,0.5);--white-dimmer:rgba(244,241,235,0.22);
+  --mono:"DM Mono",monospace;--serif:"Cormorant Garamond",Georgia,serif;--sans:"Syne",sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:var(--sans);overflow-x:hidden;cursor:none}
+.cursor{position:fixed;width:8px;height:8px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:difference;transition:transform 0.1s}
+.cursor-ring{position:fixed;width:32px;height:32px;border:1px solid rgba(201,169,110,0.4);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width 0.2s,height 0.2s,border-color 0.2s}
+.cursor.hovering{transform:translate(-50%,-50%) scale(1.5)}
+body::before{content:"";position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:0.5}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:22px 56px;border-bottom:1px solid var(--border);backdrop-filter:blur(24px);background:rgba(8,8,8,0.82);transition:background 0.3s,padding 0.3s}
+nav.scrolled{padding:16px 56px;background:rgba(8,8,8,0.96)}
+.nav-brand{display:flex;flex-direction:row;align-items:center;gap:14px;text-decoration:none}
+.nav-logo{height:48px;width:48px;object-fit:contain;flex-shrink:0}
+.nav-brand-text{display:flex;flex-direction:column;gap:2px}
+.nav-brand-main{font-family:var(--sans);font-size:18px;font-weight:700;letter-spacing:0.08em;color:var(--white);text-transform:uppercase}
+.nav-brand-sub{font-family:var(--mono);font-size:11px;letter-spacing:0.2em;color:var(--gold);text-transform:uppercase}
+.nav-links{display:flex;gap:32px;list-style:none;align-items:center}
+.nav-links a{font-family:var(--mono);font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--white-dim);text-decoration:none;transition:color 0.2s;position:relative}
+.nav-links a::after{content:"";position:absolute;bottom:-3px;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transition:transform 0.25s}
+.nav-links a:hover{color:var(--white)}.nav-links a:hover::after{transform:scaleX(1)}
+.nav-cta{color:var(--black)!important;background:var(--gold);padding:10px 22px;transition:all 0.25s}
+.nav-cta:hover{background:var(--white)}.nav-cta::after{display:none!important}
+.nav-cta-big{padding:14px 30px!important;font-size:13px!important;letter-spacing:0.2em!important;font-weight:700!important;box-shadow:0 0 24px rgba(201,169,110,0.25)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.6s cubic-bezier(0.16,1,0.3,1),transform 0.6s cubic-bezier(0.16,1,0.3,1)}
+.reveal.visible{opacity:1;transform:none}
+
+/* PAGE HEADER */
+.page-header{padding:180px 80px 80px;max-width:1200px;margin:0 auto}
+.page-label{font-family:var(--mono);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:12px;margin-bottom:28px}
+.page-label::before{content:"";display:block;width:32px;height:1px;background:var(--gold)}
+.page-header h1{font-family:var(--serif);font-size:clamp(52px,7vw,88px);font-weight:300;line-height:1.05;letter-spacing:-0.01em;margin-bottom:28px}
+.page-header h1 em{font-style:italic;color:var(--gold)}
+.page-header p{font-family:var(--sans);font-size:19px;color:var(--white-dim);max-width:560px;line-height:1.7}
+
+/* FOUNDER SECTION */
+.founder-section{padding:0 80px 100px;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:2px}
+.founder-left{background:var(--surface);border:1px solid var(--border);padding:64px;display:flex;flex-direction:column;gap:32px}
+.founder-avatar{width:88px;height:88px;background:var(--gold-dim);border:1px solid rgba(201,169,110,0.3);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:28px;color:var(--gold);font-weight:500;letter-spacing:0.05em;flex-shrink:0}
+.founder-name{font-family:var(--serif);font-size:44px;font-weight:300;line-height:1.1}
+.founder-title{font-family:var(--mono);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-top:4px}
+.founder-location{font-family:var(--mono);font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--white-dimmer);display:flex;align-items:center;gap:8px;margin-top:2px}
+.founder-location::before{content:"";display:block;width:6px;height:6px;background:var(--gold);border-radius:50%}
+.founder-bio{font-family:var(--sans);font-size:16px;color:var(--white-dim);line-height:1.8}
+.founder-bio p{margin-bottom:20px}
+.founder-bio p:last-child{margin-bottom:0}
+.founder-bio strong{color:var(--white);font-weight:600}
+.founder-links{display:flex;gap:16px;flex-wrap:wrap;padding-top:24px;border-top:1px solid var(--border)}
+.founder-link{font-family:var(--mono);font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);text-decoration:none;display:flex;align-items:center;gap:6px;transition:opacity 0.2s}
+.founder-link:hover{opacity:0.7}
+
+.founder-right{display:flex;flex-direction:column;gap:2px}
+.founder-stat-card{background:var(--surface);border:1px solid var(--border);padding:40px 48px;flex:1;display:flex;flex-direction:column;justify-content:center}
+.founder-stat-num{font-family:var(--serif);font-size:64px;font-weight:300;color:var(--gold);line-height:1}
+.founder-stat-label{font-family:var(--mono);font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--white-dimmer);margin-top:8px}
+.founder-stat-desc{font-family:var(--sans);font-size:14px;color:var(--white-dim);line-height:1.6;margin-top:12px}
+
+/* STORY SECTION */
+.story-section{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:100px 80px;display:grid;grid-template-columns:280px 1fr;gap:80px;align-items:start}
+.story-label{font-family:var(--mono);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);position:sticky;top:140px}
+.story-label::before{content:"";display:block;width:32px;height:1px;background:var(--gold);margin-bottom:12px}
+.story-body{font-family:var(--serif);font-size:22px;font-weight:300;line-height:1.75;color:var(--white)}
+.story-body p{margin-bottom:32px}
+.story-body p:last-child{margin-bottom:0}
+.story-body strong{font-weight:600;color:var(--white)}
+.story-body em{font-style:italic;color:var(--gold)}
+
+/* VALUES */
+.values-section{padding:100px 80px;max-width:1200px;margin:0 auto}
+.values-header{margin-bottom:56px}
+.values-header h2{font-family:var(--serif);font-size:clamp(36px,4vw,52px);font-weight:300;line-height:1.1}
+.values-header h2 em{font-style:italic;color:var(--gold)}
+.values-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;border:1px solid var(--border)}
+.value-card{background:var(--surface);padding:48px 40px;border-right:1px solid var(--border);position:relative;overflow:hidden}
+.value-card:last-child{border-right:none}
+.value-card::before{content:"";position:absolute;top:0;left:0;width:2px;height:100%;background:var(--gold);transform:scaleY(0);transform-origin:top;transition:transform 0.4s cubic-bezier(0.16,1,0.3,1)}
+.value-card:hover::before{transform:scaleY(1)}
+.value-num{font-family:var(--mono);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:8px}
+.value-num::before{content:"";display:inline-block;width:16px;height:1px;background:var(--gold)}
+.value-title{font-family:var(--serif);font-size:26px;font-weight:300;margin-bottom:16px;line-height:1.2}
+.value-desc{font-family:var(--sans);font-size:14px;color:var(--white-dim);line-height:1.7}
+
+/* PROCESS SECTION */
+.process-section{padding:100px 80px;background:var(--surface);border-top:1px solid var(--border)}
+.process-inner{max-width:1200px;margin:0 auto}
+.process-header{margin-bottom:64px}
+.process-header h2{font-family:var(--serif);font-size:clamp(36px,4vw,52px);font-weight:300;line-height:1.1}
+.process-header h2 em{font-style:italic;color:var(--gold)}
+.process-header p{font-family:var(--sans);font-size:17px;color:var(--white-dim);max-width:500px;line-height:1.7;margin-top:16px}
+.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:2px}
+.process-step{background:var(--black);border:1px solid var(--border);padding:40px 36px;position:relative}
+.step-num{font-family:var(--serif);font-size:72px;font-weight:300;color:var(--gold);opacity:0.18;line-height:1;position:absolute;top:24px;right:28px}
+.step-label{font-family:var(--mono);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.step-title{font-family:var(--serif);font-size:24px;font-weight:300;line-height:1.2;margin-bottom:14px}
+.step-desc{font-family:var(--sans);font-size:13px;color:var(--white-dim);line-height:1.7}
+.step-duration{font-family:var(--mono);font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--white-dimmer);margin-top:20px;padding-top:16px;border-top:1px solid var(--border)}
+
+/* TOOLS */
+.tools-section{padding:80px;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.tools-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 2fr;gap:80px;align-items:center}
+.tools-label{font-family:var(--mono);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.tools-label::before{content:"";display:block;width:32px;height:1px;background:var(--gold);margin-bottom:12px}
+.tools-title{font-family:var(--serif);font-size:36px;font-weight:300;line-height:1.2}
+.tools-title em{font-style:italic;color:var(--gold)}
+.tools-grid{display:flex;flex-wrap:wrap;gap:12px}
+.tool-badge{font-family:var(--mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;padding:8px 16px;border:1px solid var(--border);color:var(--white-dim);background:var(--surface);transition:all 0.2s}
+.tool-badge:hover{border-color:rgba(201,169,110,0.3);color:var(--gold)}
+
+/* CTA */
+.about-cta{padding:100px 80px;text-align:center}
+.about-cta h2{font-family:var(--serif);font-size:clamp(40px,5vw,64px);font-weight:300;margin-bottom:20px;line-height:1.1}
+.about-cta h2 em{font-style:italic;color:var(--gold)}
+.about-cta p{font-family:var(--sans);font-size:17px;color:var(--white-dim);margin-bottom:40px;line-height:1.7;max-width:500px;margin-left:auto;margin-right:auto}
+.cta-buttons{display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:var(--black);font-family:var(--mono);font-size:13px;letter-spacing:0.18em;text-transform:uppercase;padding:15px 30px;text-decoration:none;transition:all 0.28s;cursor:none;position:relative;overflow:hidden}
+.btn-primary::before{content:"";position:absolute;inset:0;background:var(--surface3);transform:translateX(-101%);transition:transform 0.28s cubic-bezier(0.16,1,0.3,1)}
+.btn-primary:hover::before{transform:translateX(0)}.btn-primary:hover{color:var(--white);transform:translateY(-2px)}
+.btn-primary span,.btn-primary svg{position:relative;z-index:1}
+.btn-ghost{font-family:var(--mono);font-size:13px;letter-spacing:0.15em;text-transform:uppercase;color:var(--white-dim);text-decoration:none;border:1px solid var(--border-bright);padding:14px 28px;transition:all 0.25s;cursor:none}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+
+/* FOOTER */
+footer{padding:48px 80px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.footer-left{display:flex;align-items:center;gap:16px}
+.footer-logo{height:36px;width:36px;object-fit:contain;opacity:0.6}
+.footer-brand-name{font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase}
+.footer-brand-sub{font-family:var(--mono);font-size:11px;color:var(--white-dimmer);letter-spacing:0.1em;margin-top:2px}
+.footer-links{display:flex;gap:28px;list-style:none}
+.footer-links a{font-family:var(--mono);font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--white-dimmer);text-decoration:none;transition:color 0.2s}
+.footer-links a:hover{color:var(--gold)}
+
+@media(max-width:1024px){
+  nav{padding:18px 32px}
+  .page-header{padding:140px 32px 60px}
+  .founder-section{padding:0 32px 80px;grid-template-columns:1fr}
+  .founder-right{flex-direction:row}
+  .story-section{padding:80px 32px;grid-template-columns:1fr}
+  .story-label{position:static;margin-bottom:32px}
+  .values-section{padding:80px 32px}
+  .values-grid{grid-template-columns:1fr}
+  .value-card{border-right:none;border-bottom:1px solid var(--border)}
+  .process-section{padding:80px 32px}
+  .process-steps{grid-template-columns:1fr 1fr}
+  .tools-section{padding:60px 32px}
+  .tools-inner{grid-template-columns:1fr;gap:40px}
+  .about-cta{padding:80px 32px}
+  footer{padding:40px 32px;flex-direction:column;gap:24px;text-align:center}
+}
+@media(max-width:768px){
+  .founder-right{flex-direction:column}
+  .process-steps{grid-template-columns:1fr}
+  .footer-links{flex-wrap:wrap;justify-content:center;gap:16px}
+}
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav id="mainNav">
+  <a class="nav-brand" href="/">
+    <img class="nav-logo" src="logo.png" alt="Precision 3D Technologies logo">
+    <div class="nav-brand-text">
+      <span class="nav-brand-main">Precision 3D Technologies</span>
+      <span class="nav-brand-sub">by Ishanjot Dhahan</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/#configurators">Demos</a></li>
+    <li><a href="/#pricing">Pricing</a></li>
+    <li><a href="/about.html">About</a></li>
+    <li><a href="/#faq">FAQ</a></li>
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="contact.html" class="nav-cta nav-cta-big">Start a Project</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header reveal">
+  <div class="page-label">About</div>
+  <h1>Built by one person.<br><em>For serious businesses.</em></h1>
+  <p>Precision 3D Technologies is a boutique configurator studio. No account managers, no offshore teams — just focused, high-craft work on a small number of projects at a time.</p>
+</div>
+
+<!-- FOUNDER -->
+<div class="founder-section">
+  <div class="founder-left reveal">
+    <div>
+      <div class="founder-avatar">ID</div>
+    </div>
+    <div>
+      <div class="founder-name">Ishanjot Dhahan</div>
+      <div class="founder-title">Founder & Developer</div>
+      <div class="founder-location">Toronto, Ontario, Canada</div>
+    </div>
+    <div class="founder-bio">
+      <p>I'm a 3D developer and sales systems builder. I started Precision 3D Technologies after watching a client lose a six-figure deal because their prospect couldn't visualize the product and wouldn't wait three days for a quote.</p>
+      <p>That problem — the gap between someone wanting to buy and having what they need to commit — is what every configurator I build is designed to close. <strong>Not just a pretty 3D tool, but an actual sales machine.</strong></p>
+      <p>Before this, I worked across web development, interactive product design, and B2B sales strategy. That combination — technical craft plus commercial thinking — is what makes these builds different from a typical 3D agency.</p>
+      <p>I take on a small number of projects at a time so I can be deeply involved in every one. Every client gets me, not a junior developer following a template.</p>
+    </div>
+    <div class="founder-links">
+      <a class="founder-link" href="https://linkedin.com/in/ishanjotdhahan" target="_blank">
+        LinkedIn →
+      </a>
+      <a class="founder-link" href="mailto:ishanjot@3dprecisionsystems.com">
+        ishanjot@3dprecisionsystems.com →
+      </a>
+      <a class="founder-link" href="https://calendly.com/ishanjot/30min" target="_blank">
+        Book a 30-min call →
+      </a>
+    </div>
+  </div>
+
+  <div class="founder-right reveal">
+    <div class="founder-stat-card">
+      <div class="founder-stat-num">12+</div>
+      <div class="founder-stat-label">Configurators Built</div>
+      <div class="founder-stat-desc">Across outdoor structures, marine, custom fabrication, home improvement, and more.</div>
+    </div>
+    <div class="founder-stat-card">
+      <div class="founder-stat-num">60%+</div>
+      <div class="founder-stat-label">Avg. Close Rate After Launch</div>
+      <div class="founder-stat-desc">Up from an industry average of 18–22%. The delta is the value of a great configurator.</div>
+    </div>
+    <div class="founder-stat-card">
+      <div class="founder-stat-num">2–4wk</div>
+      <div class="founder-stat-label">Average Build Time</div>
+      <div class="founder-stat-desc">From signed brief to live configurator. Most agencies quote 3–6 months. We move faster.</div>
+    </div>
+  </div>
+</div>
+
+<!-- STORY -->
+<div class="story-section">
+  <div class="story-label reveal">The Story</div>
+  <div class="story-body reveal">
+    <p>Precision 3D Technologies started with a conversation I kept having over and over. A business owner would tell me they had a great product, solid leads, and a sales team that worked hard — but their close rate was stuck at 15–20%. They couldn't figure out why.</p>
+    <p>The answer was almost always the same: <em>the gap between a lead's first interest and their first real conversation with your product is too wide, too slow, and too dependent on your reps' time.</em></p>
+    <p>Most B2B product companies ask prospects to take a leap of faith. Here's a brochure. Here's a contact form. Wait 3 days for a quote. Hope they don't go to a competitor in the meantime. That process was designed in 2005 and hasn't changed.</p>
+    <p>The companies winning in product sales today have closed that gap. They've put an interactive, visual, self-service experience on their website — one that lets buyers design their own product, see the price in real time, and submit a pre-qualified configuration when they're ready. <strong>The sales team only gets involved to close.</strong></p>
+    <p>That's what I build. Not just a 3D viewer, not just a price calculator — but a complete sales experience that moves a browser to a buyer without requiring a rep for the first 80% of the process.</p>
+    <p>Every project I take on is one I believe has a clear, measurable ROI. If the math doesn't work, I'll tell you before we start. If it does work — and it usually does — you'll see it in your close rate within 60 days.</p>
+  </div>
+</div>
+
+<!-- VALUES -->
+<div class="values-section">
+  <div class="values-header reveal">
+    <h2>How I <em>work.</em></h2>
+  </div>
+  <div class="values-grid">
+    <div class="value-card reveal">
+      <div class="value-num">01</div>
+      <div class="value-title">Sales outcomes, not deliverables</div>
+      <div class="value-desc">I'm not here to make something that looks impressive in a demo. I'm here to move your close rate. Every design and technical decision is made through that lens — does this help a buyer commit, or not?</div>
+    </div>
+    <div class="value-card reveal">
+      <div class="value-num">02</div>
+      <div class="value-title">Transparency over impressiveness</div>
+      <div class="value-desc">I'll tell you if a configurator isn't the right solution for your business. I'll tell you when a feature idea won't move the needle. Honest advice upfront is worth more than a polished pitch that leads to a bad fit.</div>
+    </div>
+    <div class="value-card reveal">
+      <div class="value-num">03</div>
+      <div class="value-title">Small volume, full attention</div>
+      <div class="value-desc">I take on a limited number of projects at a time so every client gets my full focus. You won't be handed off to a junior, you won't wait a week for a reply. You get the same person from brief to launch.</div>
+    </div>
+  </div>
+</div>
+
+<!-- PROCESS -->
+<div class="process-section">
+  <div class="process-inner">
+    <div class="process-header reveal">
+      <h2>The process, <em>start to finish.</em></h2>
+      <p>Four stages. Typically 2–4 weeks from signed brief to live configurator on your site.</p>
+    </div>
+    <div class="process-steps">
+      <div class="process-step reveal">
+        <div class="step-num">01</div>
+        <div class="step-label">Week 1</div>
+        <div class="step-title">Brief & Scoping</div>
+        <div class="step-desc">We map your product's options, pricing logic, and integration requirements. This is the most important week — every fast build starts with a complete brief.</div>
+        <div class="step-duration">3–5 days</div>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-num">02</div>
+        <div class="step-label">Week 1–2</div>
+        <div class="step-title">3D Build & Pricing Logic</div>
+        <div class="step-desc">I build the 3D model and configure the pricing engine simultaneously. Options, rules, and the visual experience come together in one integrated sprint.</div>
+        <div class="step-duration">5–8 days</div>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-num">03</div>
+        <div class="step-label">Week 2–3</div>
+        <div class="step-title">Integration & Review</div>
+        <div class="step-desc">CRM connection, lead capture, quote PDF, Calendly or booking integration. Staging environment for your review and revisions before anything goes live.</div>
+        <div class="step-duration">3–5 days</div>
+      </div>
+      <div class="process-step reveal">
+        <div class="step-num">04</div>
+        <div class="step-label">Week 3–4</div>
+        <div class="step-title">Launch & Handoff</div>
+        <div class="step-desc">Goes live on your site with full documentation. I monitor the first 2 weeks of live data with you and make adjustments based on real user behavior.</div>
+        <div class="step-duration">2–3 days + monitoring</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TOOLS -->
+<div class="tools-section reveal">
+  <div class="tools-inner">
+    <div>
+      <div class="tools-label">Stack & Tools</div>
+      <div class="tools-title">Built with the<br><em>right tools</em> for the job.</div>
+    </div>
+    <div class="tools-grid">
+      <span class="tool-badge">Three.js</span>
+      <span class="tool-badge">WebGL</span>
+      <span class="tool-badge">React</span>
+      <span class="tool-badge">Next.js</span>
+      <span class="tool-badge">Blender</span>
+      <span class="tool-badge">GLTF / GLB</span>
+      <span class="tool-badge">Vercel</span>
+      <span class="tool-badge">Shopify</span>
+      <span class="tool-badge">HubSpot</span>
+      <span class="tool-badge">Salesforce</span>
+      <span class="tool-badge">Calendly</span>
+      <span class="tool-badge">Zapier</span>
+      <span class="tool-badge">Stripe</span>
+      <span class="tool-badge">PDF Generation</span>
+      <span class="tool-badge">Google Analytics</span>
+      <span class="tool-badge">Framer Motion</span>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="about-cta reveal">
+  <h2>Ready to close<br>more deals <em>automatically?</em></h2>
+  <p>Get a free custom mockup of your product in a 3D configurator — built before you commit to anything.</p>
+  <div class="cta-buttons">
+    <a href="contact.html" class="btn-primary"><span>Start a Project</span><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 6.5h9M6.5 2l4.5 4.5-4.5 4.5" stroke="currentColor" stroke-width="1.2"/></svg></a>
+    <a href="https://calendly.com/ishanjot/30min" target="_blank" class="btn-ghost">Book a 30-min call →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-left">
+    <img class="footer-logo" src="logo.png" alt="Precision 3D Technologies">
+    <div>
+      <div class="footer-brand-name">Precision 3D Technologies</div>
+      <div class="footer-brand-sub">© 2024–2026 Ishanjot Dhahan · Toronto, Ontario, Canada</div>
+    </div>
+  </div>
+  <ul class="footer-links">
+    <li><a href="/#configurators">Demos</a></li>
+    <li><a href="/#pricing">Pricing</a></li>
+    <li><a href="/case-studies">Case Studies</a></li>
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="privacy.html">Privacy</a></li>
+  </ul>
+</footer>
+
+<script>
+const cursor=document.getElementById("cursor");const ring=document.getElementById("cursorRing");
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener("mousemove",e=>{mx=e.clientX;my=e.clientY});
+function animateCursor(){rx+=(mx-rx)*0.12;ry+=(my-ry)*0.12;cursor.style.left=mx+"px";cursor.style.top=my+"px";ring.style.left=rx+"px";ring.style.top=ry+"px";requestAnimationFrame(animateCursor);}
+animateCursor();
+document.querySelectorAll("a,button").forEach(el=>{el.addEventListener("mouseenter",()=>{ring.style.width="52px";ring.style.height="52px";ring.style.borderColor="rgba(201,169,110,0.9)";cursor.classList.add("hovering")});el.addEventListener("mouseleave",()=>{ring.style.width="32px";ring.style.height="32px";ring.style.borderColor="rgba(201,169,110,0.4)";cursor.classList.remove("hovering")});});
+window.addEventListener("scroll",()=>document.getElementById("mainNav").classList.toggle("scrolled",window.scrollY>80));
+const obs=new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add("visible"),i*80)});},{threshold:0.07});
+document.querySelectorAll(".reveal").forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Brief a 3D Developer: What You Need Before You Start — Precision 3D Technologies</title>
+<meta name="description" content="Most projects stall not because of budget or timeline — but because the client brief was vague. Here's the exact information a developer needs to get started fast.">
+<meta name="author" content="Ishanjot Dhahan">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://3dprecisionsystems.vercel.app/blog/how-to-brief-a-3d-developer">
+<link rel="icon" type="image/png" href="../logo.png">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Brief a 3D Developer: What You Need Before You Start">
+<meta property="og:description" content="Most projects stall not because of budget or timeline — but because the client brief was vague. Here's the exact information a developer needs to get started fast.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --black:#080808;--surface:#0f0f0f;--surface2:#151a20;--surface3:#1c222c;
+  --grey-border:rgba(255,255,255,0.08);--border:rgba(255,255,255,0.07);--border-bright:rgba(255,255,255,0.15);
+  --gold:#c9a96e;--gold-dim:rgba(201,169,110,0.12);
+  --white:#f4f1eb;--white-dim:rgba(244,241,235,0.5);--white-dimmer:rgba(244,241,235,0.22);
+  --mono:"DM Mono",monospace;--serif:"Cormorant Garamond",Georgia,serif;--sans:"Syne",sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:var(--sans);overflow-x:hidden;cursor:none}
+.cursor{position:fixed;width:8px;height:8px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:difference;transition:transform 0.1s}
+.cursor-ring{position:fixed;width:32px;height:32px;border:1px solid rgba(201,169,110,0.4);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width 0.2s,height 0.2s,border-color 0.2s}
+.cursor.hovering{transform:translate(-50%,-50%) scale(1.5)}
+body::before{content:"";position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:0.5}
+nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:22px 56px;border-bottom:1px solid var(--border);backdrop-filter:blur(24px);background:rgba(8,8,8,0.82);transition:background 0.3s,padding 0.3s}
+nav.scrolled{padding:16px 56px;background:rgba(8,8,8,0.96)}
+.nav-brand{display:flex;flex-direction:row;align-items:center;gap:14px;text-decoration:none}
+.nav-logo{height:48px;width:48px;object-fit:contain;flex-shrink:0}
+.nav-brand-text{display:flex;flex-direction:column;gap:2px}
+.nav-brand-main{font-family:var(--sans);font-size:18px;font-weight:700;letter-spacing:0.08em;color:var(--white);text-transform:uppercase}
+.nav-brand-sub{font-family:var(--mono);font-size:11px;letter-spacing:0.2em;color:var(--gold);text-transform:uppercase}
+.nav-links{display:flex;gap:32px;list-style:none;align-items:center}
+.nav-links a{font-family:var(--mono);font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--white-dim);text-decoration:none;transition:color 0.2s;position:relative}
+.nav-links a::after{content:"";position:absolute;bottom:-3px;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transition:transform 0.25s}
+.nav-links a:hover{color:var(--white)}.nav-links a:hover::after{transform:scaleX(1)}
+.nav-cta{color:var(--black)!important;background:var(--gold);padding:10px 22px;transition:all 0.25s}
+.nav-cta:hover{background:var(--white)}.nav-cta::after{display:none!important}
+.nav-cta-big{padding:14px 30px!important;font-size:13px!important;letter-spacing:0.2em!important;font-weight:700!important;box-shadow:0 0 24px rgba(201,169,110,0.25)}
+.article-layout{display:grid;grid-template-columns:1fr 320px;gap:80px;max-width:1200px;margin:0 auto;padding:160px 80px 100px}
+.article-header{margin-bottom:64px}
+.article-breadcrumb{font-family:var(--mono);font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--white-dimmer);display:flex;align-items:center;gap:8px;margin-bottom:32px}
+.article-breadcrumb a{color:var(--white-dimmer);text-decoration:none;transition:color 0.2s}
+.article-breadcrumb a:hover{color:var(--gold)}
+.article-cat{font-family:var(--mono);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);padding:5px 12px;border:1px solid rgba(201,169,110,0.2);background:var(--gold-dim);display:inline-block;margin-bottom:24px}
+.article-title{font-family:var(--serif);font-size:clamp(36px,4.5vw,60px);font-weight:300;line-height:1.1;letter-spacing:-0.01em;margin-bottom:24px}
+.article-subtitle{font-family:var(--sans);font-size:19px;color:var(--white-dim);line-height:1.6;margin-bottom:32px}
+.article-byline{display:flex;align-items:center;gap:16px;padding-top:24px;border-top:1px solid var(--border)}
+.byline-avatar{width:40px;height:40px;background:var(--gold-dim);border:1px solid rgba(201,169,110,0.3);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:12px;color:var(--gold);font-weight:500;flex-shrink:0}
+.byline-name{font-family:var(--sans);font-size:14px;font-weight:600}
+.byline-meta{font-family:var(--mono);font-size:11px;letter-spacing:0.1em;color:var(--white-dimmer);margin-top:2px}
+.article-body{font-family:var(--serif);font-size:20px;font-weight:300;line-height:1.8;color:var(--white)}
+.article-body p{margin-bottom:28px}
+.article-body h2{font-family:var(--sans);font-size:22px;font-weight:700;letter-spacing:0.02em;margin-top:56px;margin-bottom:20px;color:var(--white)}
+.article-body h3{font-family:var(--serif);font-size:28px;font-weight:400;font-style:italic;margin-top:40px;margin-bottom:16px;color:var(--gold)}
+.article-body strong{font-weight:600;color:var(--white)}
+.article-body em{font-style:italic;color:var(--gold)}
+.article-body ul{margin:0 0 28px 0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:12px}
+.article-body ul li{display:flex;gap:12px;align-items:flex-start}
+.article-body ul li::before{content:"";display:block;width:6px;height:6px;background:var(--gold);border-radius:50%;flex-shrink:0;margin-top:10px}
+.article-body ol{margin:0 0 28px 24px;display:flex;flex-direction:column;gap:12px}
+.article-body ol li{padding-left:4px}
+.article-body blockquote{border-left:3px solid var(--gold);padding:24px 32px;margin:40px 0;background:var(--surface);font-style:italic;font-size:22px;color:var(--white)}
+.article-body blockquote cite{display:block;font-family:var(--mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--white-dimmer);margin-top:12px;font-style:normal}
+.stat-callout{background:var(--surface2);border:1px solid rgba(201,169,110,0.2);border-left:3px solid var(--gold);padding:32px;margin:40px 0;display:flex;gap:24px;align-items:center}
+.stat-callout-num{font-family:var(--serif);font-size:60px;font-weight:300;color:var(--gold);line-height:1;flex-shrink:0}
+.stat-callout-text{font-family:var(--sans);font-size:16px;color:var(--white-dim);line-height:1.6}
+.stat-callout-text strong{color:var(--white)}
+.article-sidebar{position:sticky;top:120px;align-self:start;display:flex;flex-direction:column;gap:2px}
+.sidebar-card{background:var(--surface);border:1px solid var(--border);padding:32px}
+.sidebar-card h3{font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:16px;color:var(--white)}
+.toc-list{list-style:none;display:flex;flex-direction:column;gap:8px}
+.toc-list a{font-family:var(--mono);font-size:11px;letter-spacing:0.1em;color:var(--white-dimmer);text-decoration:none;transition:color 0.2s}
+.toc-list a:hover{color:var(--gold)}
+.sidebar-cta{background:var(--gold-dim);border:1px solid rgba(201,169,110,0.2)}
+.sidebar-cta p{font-family:var(--sans);font-size:14px;color:var(--white-dim);line-height:1.6;margin-bottom:16px}
+.sidebar-cta a{font-family:var(--mono);font-size:12px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);text-decoration:none}
+.article-footer{background:var(--surface);border-top:1px solid var(--border);padding:64px 80px;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center;max-width:100%}
+.article-tags{display:flex;flex-wrap:wrap;gap:8px}
+.article-tag{font-family:var(--mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;padding:6px 12px;border:1px solid var(--border);color:var(--white-dimmer);text-decoration:none;transition:all 0.2s}
+.article-tag:hover{border-color:var(--gold);color:var(--gold)}
+.article-cta{display:flex;gap:40px;align-items:center;background:var(--surface2);border:1px solid rgba(201,169,110,0.15);padding:40px}
+.article-cta h3{font-family:var(--serif);font-size:28px;font-weight:300;line-height:1.2;margin-bottom:8px}
+.article-cta h3 em{font-style:italic;color:var(--gold)}
+.article-cta p{font-family:var(--sans);font-size:14px;color:var(--white-dim);line-height:1.6}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:var(--black);font-family:var(--mono);font-size:13px;letter-spacing:0.18em;text-transform:uppercase;padding:15px 30px;text-decoration:none;transition:all 0.28s;white-space:nowrap}
+.btn-primary:hover{background:var(--white)}
+footer{padding:48px 80px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.footer-left{display:flex;align-items:center;gap:16px}
+.footer-logo{height:36px;width:36px;object-fit:contain;opacity:0.6}
+.footer-brand-name{font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase}
+.footer-brand-sub{font-family:var(--mono);font-size:11px;color:var(--white-dimmer);letter-spacing:0.1em;margin-top:2px}
+.footer-links{display:flex;gap:28px;list-style:none}
+.footer-links a{font-family:var(--mono);font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--white-dimmer);text-decoration:none;transition:color 0.2s}
+.footer-links a:hover{color:var(--gold)}
+@media(max-width:1024px){.article-layout{grid-template-columns:1fr;padding:140px 32px 80px}.article-sidebar{display:none}.article-footer{grid-template-columns:1fr;gap:32px}.article-cta{flex-direction:column;align-items:flex-start}nav{padding:18px 32px}footer{padding:40px 32px;flex-direction:column;gap:24px;text-align:center}}
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<nav id="mainNav">
+  <a class="nav-brand" href="/">
+    <img class="nav-logo" src="../logo.png" alt="Precision 3D Technologies logo">
+    <div class="nav-brand-text">
+      <span class="nav-brand-main">Precision 3D Technologies</span>
+      <span class="nav-brand-sub">by Ishanjot Dhahan</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/#configurators">Demos</a></li>
+    <li><a href="/#pricing">Pricing</a></li>
+    <li><a href="/about.html">About</a></li>
+    <li><a href="/#faq">FAQ</a></li>
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="/contact.html" class="nav-cta nav-cta-big">Start a Project</a></li>
+  </ul>
+</nav>
+<div class="article-layout">
+  <article>
+    <div class="article-header">
+      <div class="article-breadcrumb">
+        <a href="/blog">Blog</a>
+        <span>›</span>
+        <span>Behind the Build</span>
+      </div>
+      <div class="article-cat">Behind the Build</div>
+      <h1 class="article-title">How to Brief a 3D Developer: What You Need Before You Start</h1>
+      <p class="article-subtitle">Most projects stall not because of budget or timeline — but because the client brief was vague. Here's the exact information a developer needs to get started fast.</p>
+      <div class="article-byline">
+        <div class="byline-avatar">ID</div>
+        <div>
+          <div class="byline-name">Ishanjot Dhahan</div>
+          <div class="byline-meta">May 2, 2024 · 4 min read · Precision 3D Technologies</div>
+        </div>
+      </div>
+    </div>
+    <div class="article-body">
+      <p>In every project we've taken on, the gap between a fast build and a slow build comes down to one thing: the quality of the brief.</p>
+
+      <p>We've started projects with a 10-page document of product specs, pricing logic, and option rules — and launched in 10 days. We've also started projects where three weeks in, we were still waiting on basic product dimensions. The project work is the same. The brief makes all the difference.</p>
+
+      <h2 id="common">The Most Common Stall</h2>
+
+      <p>The most common project stall we see has nothing to do with technical complexity or budget. It's the client not knowing what options their product actually has, or having that information locked in someone's head rather than in a document.</p>
+
+      <p>"We have a lot of options" is not a brief. "Here are 47 SKUs with dimensions, materials, and the pricing formula for each" is a brief. The difference between those two inputs is weeks of back-and-forth — or a clean first sprint.</p>
+
+      <h2 id="product">1. Your Product Information</h2>
+
+      <p>Before we can build anything, we need to understand what we're building. This means:</p>
+
+      <ul>
+        <li>Product name and category</li>
+        <li>Key dimensions (what can the customer adjust, and what's the range?)</li>
+        <li>Photos from multiple angles — or ideally, existing 3D CAD files if you have them</li>
+        <li>A description of what the product looks like in each of its configurations</li>
+        <li>Any parts that are standard (always included) vs. optional</li>
+      </ul>
+
+      <h2 id="options">2. Option Logic</h2>
+
+      <p>This is the most important and most often incomplete section of any brief. We need to know:</p>
+
+      <ul>
+        <li>What options does the customer choose from? (Size, material, color, add-ons?)</li>
+        <li>Do any options depend on other options? (Example: louvered roof only available in aluminum)</li>
+        <li>Are there options that can't be combined? (Example: attached pergola requires minimum 10ft width)</li>
+        <li>What are the visual differences between options? (Different color = color change only? Different material = different 3D model?)</li>
+      </ul>
+
+      <div class="stat-callout">
+        <div class="stat-callout-num">3 wks</div>
+        <div class="stat-callout-text"><strong>Saved on average</strong> when a client comes with a complete option matrix and pricing logic document vs. defining these during the build.</div>
+      </div>
+
+      <h2 id="pricing">3. Pricing Structure</h2>
+
+      <p>Real-time pricing is the most valuable feature in a configurator — and requires the most precise input. We need to know:</p>
+
+      <ul>
+        <li>The base price for the minimum configuration</li>
+        <li>How each option affects the price (flat add-on? percentage? formula based on dimensions?)</li>
+        <li>Whether pricing should be shown as an estimate or firm quote</li>
+        <li>Any minimum order values or pricing rules</li>
+      </ul>
+
+      <h2 id="integration">4. Integration Requirements</h2>
+
+      <p>What happens after someone submits their configuration? We need to know:</p>
+
+      <ul>
+        <li>Where should lead data go? (CRM, email, Slack notification?)</li>
+        <li>Should the submission generate a PDF quote?</li>
+        <li>Is there a booking tool (Calendly, etc.) to connect?</li>
+        <li>What analytics platform is in use?</li>
+      </ul>
+
+      <h2 id="goals">5. Business Goals</h2>
+
+      <p>Understanding why you're building the configurator shapes how we design it. The goals for a configurator meant to eliminate sales calls are different from one meant to increase average order value. Tell us what success looks like — we'll design toward it.</p>
+
+      <h2 id="checklist">The Pre-Brief Checklist</h2>
+
+      <p>Before your first call with us, try to have these ready:</p>
+
+      <ul>
+        <li>Product photos (minimum 8, multiple angles)</li>
+        <li>Complete list of options with valid combinations</li>
+        <li>Pricing formula or spreadsheet</li>
+        <li>CRM or email platform for lead routing</li>
+        <li>One clear business metric you want to improve</li>
+      </ul>
+
+      <p>If you have all of this ready, we can typically scope and start your project within the first week of engagement.</p>
+    </div>
+  </article>
+  <aside class="article-sidebar">
+    <div class="sidebar-card">
+      <h3>In This Article</h3>
+      <ul class="toc-list">
+        <li><a href="#common">The Most Common Stall</a></li>
+        <li><a href="#product">1. Your Product Information</a></li>
+        <li><a href="#options">2. Option Logic</a></li>
+        <li><a href="#pricing">3. Pricing Structure</a></li>
+        <li><a href="#integration">4. Integration Requirements</a></li>
+        <li><a href="#goals">5. Business Goals</a></li>
+        <li><a href="#checklist">The Pre-Brief Checklist</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-card sidebar-cta">
+      <h3>Get a Free Demo</h3>
+      <p>See what a configurator for your exact product would look like — built before you commit to anything.</p>
+      <a href="/contact.html">Get My Free Mockup →</a>
+    </div>
+    <div class="sidebar-card">
+      <h3>About the Author</h3>
+      <p style="font-family:var(--sans);font-size:13px;color:var(--white-dim);line-height:1.6">Ishanjot Dhahan is a 3D configurator developer based in Toronto. He's built 12+ configurators for B2B product businesses across North America.</p>
+    </div>
+  </aside>
+</div>
+<div class="article-footer">
+  <div class="article-tags">
+    <a href="/blog" class="article-tag">Behind the Build</a>
+    <a href="/blog" class="article-tag">Project Planning</a>
+    <a href="/blog" class="article-tag">3D Development</a>
+    <a href="/blog" class="article-tag">How To</a>
+  </div>
+  <div class="article-cta">
+    <div>
+      <h3>Ready to cut your<br>sales cycle <em>in half?</em></h3>
+      <p>Get a free custom mockup of your product in a 3D configurator. We build it before you pay anything.</p>
+    </div>
+    <a href="/contact.html" class="btn-primary">Get Your Free Demo →</a>
+  </div>
+</div>
+<footer>
+  <div class="footer-left">
+    <img class="footer-logo" src="../logo.png" alt="Precision 3D Technologies">
+    <div>
+      <div class="footer-brand-name">Precision 3D Technologies</div>
+      <div class="footer-brand-sub">© 2024–2026 Ishanjot Dhahan · Toronto, Ontario, Canada</div>
+    </div>
+  </div>
+  <ul class="footer-links">
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="/case-studies">Case Studies</a></li>
+    <li><a href="/#pricing">Pricing</a></li>
+    <li><a href="/contact.html">Contact</a></li>
+    <li><a href="/privacy.html">Privacy</a></li>
+  </ul>
+</footer>
+<script>
+const cursor=document.getElementById("cursor");const ring=document.getElementById("cursorRing");
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener("mousemove",e=>{mx=e.clientX;my=e.clientY});
+function animateCursor(){rx+=(mx-rx)*0.12;ry+=(my-ry)*0.12;cursor.style.left=mx+"px";cursor.style.top=my+"px";ring.style.left=rx+"px";ring.style.top=ry+"px";requestAnimationFrame(animateCursor);}
+animateCursor();
+document.querySelectorAll("a,button").forEach(el=>{el.addEventListener("mouseenter",()=>{ring.style.width="52px";ring.style.height="52px";ring.style.borderColor="rgba(201,169,110,0.9)";cursor.classList.add("hovering")});el.addEventListener("mouseleave",()=>{ring.style.width="32px";ring.style.height="32px";ring.style.borderColor="rgba(201,169,110,0.4)";cursor.classList.remove("hovering")});});
+window.addEventListener("scroll",()=>document.getElementById("mainNav").classList.toggle("scrolled",window.scrollY>80));
+</script>
+</body>
+</html>

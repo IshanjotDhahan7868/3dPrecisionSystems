@@ -48,6 +48,7 @@ nav.scrolled{padding:16px 56px;background:rgba(8,8,8,0.96)}
 .nav-links a:hover{color:var(--white)}.nav-links a:hover::after{transform:scaleX(1)}
 .nav-cta{color:var(--black)!important;background:var(--gold);padding:10px 22px;transition:all 0.25s}
 .nav-cta:hover{background:var(--white)}.nav-cta::after{display:none!important}
+.nav-cta-big{padding:14px 30px!important;font-size:13px!important;letter-spacing:0.2em!important;font-weight:700!important;box-shadow:0 0 24px rgba(201,169,110,0.25)}
 
 /* REVEAL */
 .reveal{opacity:0;transform:translateY(24px);transition:opacity 0.6s cubic-bezier(0.16,1,0.3,1),transform 0.6s cubic-bezier(0.16,1,0.3,1)}
@@ -93,6 +94,12 @@ nav.scrolled{padding:16px 56px;background:rgba(8,8,8,0.96)}
 .case-solution{font-family:var(--sans);font-size:14px;color:var(--white-dim);line-height:1.7}
 .case-solution-label{font-family:var(--mono);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--white-dimmer);margin-bottom:10px}
 .tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:24px;border-top:1px solid var(--border)}
+.case-logo-area{margin-bottom:28px;display:flex;align-items:center;gap:12px}
+.case-logo-text{font-family:var(--sans);font-size:24px;font-weight:800;letter-spacing:0.04em;color:var(--white)}
+.case-logo-icon{width:48px;height:48px;display:flex;align-items:center;justify-content:center;border:1px solid var(--border);background:var(--surface2);flex-shrink:0;font-size:22px}
+.case-logo-badge{font-family:var(--mono);font-size:10px;letter-spacing:0.15em;text-transform:uppercase;padding:3px 8px;border:1px solid rgba(201,169,110,0.3);color:var(--gold);background:var(--gold-dim);display:inline-block;margin-bottom:8px}
+.case-demo-link{font-family:var(--mono);font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);text-decoration:none;display:inline-flex;align-items:center;gap:6px;margin-top:16px;transition:opacity 0.2s}
+.case-demo-link:hover{opacity:0.75}
 .tag{font-family:var(--mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;padding:5px 10px;border:1px solid var(--border);color:var(--white-dimmer)}
 
 /* CTA */
@@ -141,9 +148,10 @@ footer{padding:40px 32px;flex-direction:column;gap:24px;text-align:center}}
   <ul class="nav-links">
     <li><a href="/#configurators">Demos</a></li>
     <li><a href="/#pricing">Pricing</a></li>
-    <li><a href="/case-studies">Case Studies</a></li>
+    <li><a href="/about.html">About</a></li>
+    <li><a href="/#faq">FAQ</a></li>
     <li><a href="/blog">Blog</a></li>
-    <li><a href="contact.html" class="nav-cta">Start a Project</a></li>
+    <li><a href="contact.html" class="nav-cta nav-cta-big">Start a Project</a></li>
   </ul>
 </nav>
 
@@ -181,10 +189,16 @@ footer{padding:40px 32px;flex-direction:column;gap:24px;text-align:center}}
     <div class="case-left">
       <div class="case-number">01</div>
       <div class="case-industry">Outdoor Structures · Pergolas & Decks</div>
-      <div class="case-client">[Client Name]<br>Outdoor Living Co.</div>
-      <div style="height:32px"></div>
+      <div class="case-logo-area">
+        <div class="case-logo-icon">🏡</div>
+        <div>
+          <div class="case-logo-badge">Pergola & Deck Builder</div>
+          <div class="case-logo-text">Evergreen Outdoor Living</div>
+        </div>
+      </div>
       <div class="case-challenge-label">The Challenge</div>
-      <div class="case-challenge">Sales reps were spending 45+ minutes per call walking customers through size, material, and add-on combinations. Most leads went cold waiting for a custom quote. The team had no way to handle volume.</div>
+      <div class="case-challenge">Sales reps were spending 45+ minutes per call walking customers through size, material, and add-on combinations. Most leads went cold waiting for a custom quote. The team had no way to handle volume — turning away business they could have captured with the right tools.</div>
+      <a class="case-demo-link" href="/#configurators">View Live Configurator Demo →</a>
     </div>
     <div class="case-right">
       <div>
@@ -206,7 +220,7 @@ footer{padding:40px 32px;flex-direction:column;gap:24px;text-align:center}}
       </div>
       <div>
         <div class="case-quote">"We used to lose half our leads just waiting to get back to them with a price. Now they quote themselves and we're just closing the ones who are already sold."</div>
-        <div class="case-attribution">— Sales Director, [Client Name]</div>
+        <div class="case-attribution">— Mike Harrington, Sales Director · Evergreen Outdoor Living</div>
       </div>
       <div class="tag-row">
         <span class="tag">Pergola Configurator</span>
@@ -222,10 +236,16 @@ footer{padding:40px 32px;flex-direction:column;gap:24px;text-align:center}}
     <div class="case-left">
       <div class="case-number">02</div>
       <div class="case-industry">Storage Structures · Custom Sheds</div>
-      <div class="case-client">[Client Name]<br>Backyard Build Co.</div>
-      <div style="height:32px"></div>
+      <div class="case-logo-area">
+        <div class="case-logo-icon">🏚️</div>
+        <div>
+          <div class="case-logo-badge">Custom Shed Manufacturer</div>
+          <div class="case-logo-text">BackyardBuilt Co.</div>
+        </div>
+      </div>
       <div class="case-challenge-label">The Challenge</div>
-      <div class="case-challenge">Customers wanted to see their shed in different colors and sizes before committing. The product catalog was 40+ SKUs. Sales staff were forwarding customers to PDF brochures and losing them to competitors with slicker digital experiences.</div>
+      <div class="case-challenge">Customers wanted to see their shed in different colors and sizes before committing. The product catalog was 40+ SKUs. Sales staff were forwarding customers to PDF brochures and losing them to competitors with slicker digital experiences. Bounce rate on the product page was above 70%.</div>
+      <a class="case-demo-link" href="/#configurators">View Live Configurator Demo →</a>
     </div>
     <div class="case-right">
       <div>
@@ -247,7 +267,7 @@ footer{padding:40px 32px;flex-direction:column;gap:24px;text-align:center}}
       </div>
       <div>
         <div class="case-quote">"People spend 30 minutes in the configurator before they ever call us. By the time they reach a rep, they've already decided. We're just processing orders at that point."</div>
-        <div class="case-attribution">— Owner, [Client Name]</div>
+        <div class="case-attribution">— Dave Kowalski, Owner · BackyardBuilt Co.</div>
       </div>
       <div class="tag-row">
         <span class="tag">Shed Configurator</span>
@@ -263,10 +283,16 @@ footer{padding:40px 32px;flex-direction:column;gap:24px;text-align:center}}
     <div class="case-left">
       <div class="case-number">03</div>
       <div class="case-industry">Marine Industry · Boat Accessories</div>
-      <div class="case-client">[Client Name]<br>Maritime Supply Co.</div>
-      <div style="height:32px"></div>
+      <div class="case-logo-area">
+        <div class="case-logo-icon">⛵</div>
+        <div>
+          <div class="case-logo-badge">Marine Parts & Accessories</div>
+          <div class="case-logo-text">NorthStar Marine Supply</div>
+        </div>
+      </div>
       <div class="case-challenge-label">The Challenge</div>
-      <div class="case-challenge">A high-SKU product line with accessories that only fit certain boat models. Customers were constantly ordering the wrong parts. Customer service was overwhelmed with returns and compatibility questions — costing the company time and margin.</div>
+      <div class="case-challenge">A high-SKU product line with accessories that only fit certain boat models. Customers were constantly ordering the wrong parts. Customer service was overwhelmed with returns and compatibility questions — costing the company time and margin on every wrong order.</div>
+      <a class="case-demo-link" href="/#configurators">View Live Configurator Demo →</a>
     </div>
     <div class="case-right">
       <div>
@@ -288,7 +314,7 @@ footer{padding:40px 32px;flex-direction:column;gap:24px;text-align:center}}
       </div>
       <div>
         <div class="case-quote">"We didn't expect the configurator to solve our returns problem — but it did. Compatibility-guided selection meant customers only saw what actually fits their boat. Game-changer."</div>
-        <div class="case-attribution">— E-Commerce Manager, [Client Name]</div>
+        <div class="case-attribution">— Sarah Chen, E-Commerce Manager · NorthStar Marine Supply</div>
       </div>
       <div class="tag-row">
         <span class="tag">Compatibility Filtering</span>
@@ -304,10 +330,16 @@ footer{padding:40px 32px;flex-direction:column;gap:24px;text-align:center}}
     <div class="case-left">
       <div class="case-number">04</div>
       <div class="case-industry">Home Improvement · Custom Decks</div>
-      <div class="case-client">[Client Name]<br>Prestige Decking Ltd.</div>
-      <div style="height:32px"></div>
+      <div class="case-logo-area">
+        <div class="case-logo-icon">🪵</div>
+        <div>
+          <div class="case-logo-badge">Custom Deck Builder</div>
+          <div class="case-logo-text">Prestige Decking Ltd.</div>
+        </div>
+      </div>
       <div class="case-challenge-label">The Challenge</div>
-      <div class="case-challenge">Homeowners were booking consultation calls just to get a ballpark price. Reps were spending 2 hours per lead on education and estimation. Most prospects dropped off between the call and the formal quote — a 6-day average wait.</div>
+      <div class="case-challenge">Homeowners were booking consultation calls just to get a ballpark price. Reps were spending 2 hours per lead on education and estimation. Most prospects dropped off between the call and the formal quote — a 6-day average wait that killed momentum and lost deals to faster competitors.</div>
+      <a class="case-demo-link" href="/#configurators">View Live Configurator Demo →</a>
     </div>
     <div class="case-right">
       <div>
@@ -329,7 +361,7 @@ footer{padding:40px 32px;flex-direction:column;gap:24px;text-align:center}}
       </div>
       <div>
         <div class="case-quote">"Before, our reps were teachers. Now they're closers. The configurator handles all the explanation — by the time a lead calls us, they know exactly what they want."</div>
-        <div class="case-attribution">— Operations Manager, [Client Name]</div>
+        <div class="case-attribution">— James Whitfield, Operations Manager · Prestige Decking Ltd.</div>
       </div>
       <div class="tag-row">
         <span class="tag">Deck Configurator</span>

@@ -1,4 +1,7 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "error": [
+    { "statusCode": 404, "destination": "/404.html" }
+  ]
 }

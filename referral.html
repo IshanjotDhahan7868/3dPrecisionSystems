@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Referral Program — Precision 3D Technologies</title>
+<meta name="description" content="Refer a client to Precision 3D Technologies and earn $500 cash for every project that closes. Simple, no-strings referral program.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://3dprecisionsystems.vercel.app/referral">
+<link rel="icon" type="image/png" href="logo.png">
+<meta property="og:title" content="Referral Program — Precision 3D Technologies">
+<meta property="og:description" content="Earn $500 for every client you refer. No hoops, no thresholds.">
+<meta property="og:image" content="https://3dprecisionsystems.vercel.app/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --black:#080808;--surface:#0f0f0f;--surface2:#151a20;--surface3:#1c222c;
+  --grey-border:rgba(255,255,255,0.08);--border:rgba(255,255,255,0.07);--border-bright:rgba(255,255,255,0.15);
+  --gold:#c9a96e;--gold-dim:rgba(201,169,110,0.12);
+  --white:#f4f1eb;--white-dim:rgba(244,241,235,0.5);--white-dimmer:rgba(244,241,235,0.22);
+  --mono:"DM Mono",monospace;--serif:"Cormorant Garamond",Georgia,serif;--sans:"Syne",sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:var(--sans);overflow-x:hidden;cursor:none}
+.cursor{position:fixed;width:8px;height:8px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:difference;transition:transform 0.1s}
+.cursor-ring{position:fixed;width:32px;height:32px;border:1px solid rgba(201,169,110,0.4);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width 0.2s,height 0.2s,border-color 0.2s}
+.cursor.hovering{transform:translate(-50%,-50%) scale(1.5)}
+body::before{content:"";position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:0.5}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:22px 56px;border-bottom:1px solid var(--border);backdrop-filter:blur(24px);background:rgba(8,8,8,0.82);transition:background 0.3s,padding 0.3s}
+nav.scrolled{padding:16px 56px;background:rgba(8,8,8,0.96)}
+.nav-brand{display:flex;flex-direction:row;align-items:center;gap:14px;text-decoration:none}
+.nav-logo{height:48px;width:48px;object-fit:contain;flex-shrink:0}
+.nav-brand-text{display:flex;flex-direction:column;gap:2px}
+.nav-brand-main{font-family:var(--sans);font-size:18px;font-weight:700;letter-spacing:0.08em;color:var(--white);text-transform:uppercase}
+.nav-brand-sub{font-family:var(--mono);font-size:11px;letter-spacing:0.2em;color:var(--gold);text-transform:uppercase}
+.nav-links{display:flex;gap:32px;list-style:none;align-items:center}
+.nav-links a{font-family:var(--mono);font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--white-dim);text-decoration:none;transition:color 0.2s;position:relative}
+.nav-links a::after{content:"";position:absolute;bottom:-3px;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transition:transform 0.25s}
+.nav-links a:hover{color:var(--white)}.nav-links a:hover::after{transform:scaleX(1)}
+.nav-cta{color:var(--black)!important;background:var(--gold);padding:10px 22px;transition:all 0.25s}
+.nav-cta:hover{background:var(--white)}.nav-cta::after{display:none!important}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.6s cubic-bezier(0.16,1,0.3,1),transform 0.6s cubic-bezier(0.16,1,0.3,1)}
+.reveal.visible{opacity:1;transform:none}
+
+/* PAGE HEADER */
+.page-header{padding:180px 80px 100px;max-width:1200px;margin:0 auto}
+.page-label{font-family:var(--mono);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:12px;margin-bottom:28px}
+.page-label::before{content:"";display:block;width:32px;height:1px;background:var(--gold)}
+.page-header h1{font-family:var(--serif);font-size:clamp(52px,7vw,88px);font-weight:300;line-height:1.05;letter-spacing:-0.01em;margin-bottom:28px}
+.page-header h1 em{font-style:italic;color:var(--gold)}
+.page-header p{font-family:var(--sans);font-size:19px;color:var(--white-dim);max-width:560px;line-height:1.7}
+
+/* HERO PAYOUT */
+.payout-hero{background:var(--surface);border:1px solid rgba(201,169,110,0.2);padding:64px 80px;margin:0 80px 0;max-width:calc(1200px - 160px);margin-left:auto;margin-right:auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;position:relative;overflow:hidden}
+.payout-hero::before{content:"";position:absolute;top:0;left:0;width:3px;height:100%;background:var(--gold)}
+.payout-amount{font-family:var(--serif);font-size:100px;font-weight:300;color:var(--gold);line-height:1}
+.payout-label{font-family:var(--mono);font-size:12px;letter-spacing:0.2em;text-transform:uppercase;color:var(--white-dimmer);margin-top:8px}
+.payout-desc{font-family:var(--sans);font-size:18px;color:var(--white-dim);line-height:1.7}
+.payout-desc strong{color:var(--white);font-weight:600}
+
+/* HOW IT WORKS */
+.how-section{padding:100px 80px;max-width:1200px;margin:0 auto}
+.section-label-row{font-family:var(--mono);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.section-label-row::before{content:"";display:block;width:24px;height:1px;background:var(--gold)}
+.section-title{font-family:var(--serif);font-size:clamp(38px,5vw,58px);font-weight:300;line-height:1.1;margin-bottom:64px}
+.section-title em{font-style:italic;color:var(--gold)}
+.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;border:1px solid var(--border)}
+.step-item{padding:48px 40px;background:var(--surface);border-right:1px solid var(--border);position:relative}
+.step-item:last-child{border-right:none}
+.step-num{font-family:var(--mono);font-size:11px;letter-spacing:0.2em;color:var(--gold);text-transform:uppercase;margin-bottom:24px;display:flex;align-items:center;gap:8px}
+.step-num::before{content:"";display:inline-block;width:20px;height:1px;background:var(--gold)}
+.step-item h3{font-family:var(--serif);font-size:28px;font-weight:300;margin-bottom:16px;line-height:1.2}
+.step-item p{font-family:var(--sans);font-size:15px;color:var(--white-dim);line-height:1.7}
+
+/* WHO SHOULD REFER */
+.who-section{padding:0 80px 100px;max-width:1200px;margin:0 auto}
+.who-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;border:1px solid var(--border)}
+.who-item{padding:40px;background:var(--surface);border-right:1px solid var(--border);border-bottom:1px solid var(--border);display:flex;gap:20px;align-items:flex-start}
+.who-item:nth-child(2n){border-right:none}
+.who-icon{width:40px;height:40px;background:var(--gold-dim);border:1px solid rgba(201,169,110,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--gold)}
+.who-item h4{font-family:var(--sans);font-size:15px;font-weight:600;letter-spacing:0.05em;margin-bottom:6px}
+.who-item p{font-family:var(--sans);font-size:14px;color:var(--white-dim);line-height:1.6}
+
+/* TERMS */
+.terms-section{padding:0 80px 100px;max-width:1200px;margin:0 auto}
+.terms-box{background:var(--surface);border:1px solid var(--border);padding:48px;display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.term-item{display:flex;gap:16px;align-items:flex-start}
+.term-dot{width:6px;height:6px;background:var(--gold);border-radius:50%;flex-shrink:0;margin-top:7px}
+.term-text{font-family:var(--sans);font-size:15px;color:var(--white-dim);line-height:1.6}
+.term-text strong{color:var(--white);font-weight:600}
+
+/* CTA */
+.referral-cta{padding:100px 80px;text-align:center;background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.referral-cta h2{font-family:var(--serif);font-size:clamp(40px,5vw,64px);font-weight:300;margin-bottom:20px}
+.referral-cta h2 em{font-style:italic;color:var(--gold)}
+.referral-cta p{font-family:var(--sans);font-size:17px;color:var(--white-dim);margin-bottom:40px;line-height:1.7}
+.referral-cta-buttons{display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:var(--black);font-family:var(--mono);font-size:13px;letter-spacing:0.18em;text-transform:uppercase;padding:15px 30px;text-decoration:none;transition:all 0.28s;cursor:none;position:relative;overflow:hidden}
+.btn-primary::before{content:"";position:absolute;inset:0;background:var(--surface3);transform:translateX(-101%);transition:transform 0.28s cubic-bezier(0.16,1,0.3,1)}
+.btn-primary:hover::before{transform:translateX(0)}.btn-primary:hover{color:var(--white);transform:translateY(-2px)}
+.btn-primary span,.btn-primary svg{position:relative;z-index:1}
+.btn-ghost{font-family:var(--mono);font-size:13px;letter-spacing:0.15em;text-transform:uppercase;color:var(--white-dim);text-decoration:none;border:1px solid var(--border-bright);padding:14px 28px;transition:all 0.25s;cursor:none}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+
+/* FOOTER */
+footer{padding:48px 80px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.footer-left{display:flex;align-items:center;gap:16px}
+.footer-logo{height:36px;width:36px;object-fit:contain;opacity:0.6}
+.footer-brand-name{font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase}
+.footer-brand-sub{font-family:var(--mono);font-size:11px;color:var(--white-dimmer);letter-spacing:0.1em;margin-top:2px}
+.footer-links{display:flex;gap:28px;list-style:none}
+.footer-links a{font-family:var(--mono);font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--white-dimmer);text-decoration:none;transition:color 0.2s}
+.footer-links a:hover{color:var(--gold)}
+
+@media(max-width:1024px){nav{padding:18px 32px}nav.scrolled{padding:14px 32px}
+.page-header,.how-section,.who-section,.terms-section{padding-left:32px;padding-right:32px}
+.payout-hero{margin-left:32px;margin-right:32px;padding:48px 40px;grid-template-columns:1fr}
+.referral-cta{padding:80px 32px}footer{padding:40px 32px;flex-direction:column;gap:24px;text-align:center}}
+@media(max-width:768px){.steps-grid,.who-grid,.terms-box{grid-template-columns:1fr}
+.step-item,.who-item:nth-child(2n){border-right:none}
+.payout-amount{font-size:72px}.footer-links{flex-wrap:wrap;justify-content:center;gap:16px}}
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav id="mainNav">
+  <a class="nav-brand" href="/">
+    <img class="nav-logo" src="logo.png" alt="Precision 3D Technologies logo">
+    <div class="nav-brand-text">
+      <span class="nav-brand-main">Precision 3D Technologies</span>
+      <span class="nav-brand-sub">by Ishanjot Dhahan</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/#configurators">Demos</a></li>
+    <li><a href="/#pricing">Pricing</a></li>
+    <li><a href="/case-studies">Case Studies</a></li>
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="contact.html" class="nav-cta">Start a Project</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header reveal">
+  <div class="page-label">Referral Program</div>
+  <h1>Refer a client.<br>Get <em>$500 cash.</em></h1>
+  <p>Know a business that sells configurable products? Send them our way. If they become a client, you get $500. No thresholds, no waiting period, no catches.</p>
+</div>
+
+<!-- PAYOUT HERO -->
+<div class="payout-hero reveal">
+  <div>
+    <div class="payout-amount">$500</div>
+    <div class="payout-label">Per successful referral · Paid on project start</div>
+  </div>
+  <div class="payout-desc">
+    <p>Every time someone you refer signs a contract with Precision 3D Technologies, <strong>we send you $500 via e-transfer, PayPal, or Stripe</strong> — whichever works for you. No minimum number of referrals required.</p>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<div class="how-section">
+  <div class="section-label-row reveal">How It Works</div>
+  <h2 class="section-title reveal">Three steps.<br><em>Zero complexity.</em></h2>
+  <div class="steps-grid">
+    <div class="step-item reveal">
+      <div class="step-num">01</div>
+      <h3>Tell us about them</h3>
+      <p>Send an email to <strong style="color:var(--white)">ishanjot@outlook.com</strong> with the company name, your contact there, and a quick note on what they sell. That's it — you're registered.</p>
+    </div>
+    <div class="step-item reveal">
+      <div class="step-num">02</div>
+      <h3>We reach out & close</h3>
+      <p>We'll do the outreach, discovery call, and proposal entirely ourselves. You don't need to be involved beyond the intro — though if you want to make a warm introduction, that always helps.</p>
+    </div>
+    <div class="step-item reveal">
+      <div class="step-num">03</div>
+      <h3>Collect your $500</h3>
+      <p>Once the client signs and the deposit clears, your $500 hits your account within 5 business days. No invoice needed — we send it proactively.</p>
+    </div>
+  </div>
+</div>
+
+<!-- WHO SHOULD REFER -->
+<div class="who-section">
+  <div class="section-label-row reveal">Who Should Refer</div>
+  <h2 class="section-title reveal">If you know any of<br>these <em>people</em>...</h2>
+  <div class="who-grid">
+    <div class="who-item reveal">
+      <div class="who-icon"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" width="18" height="18"><rect x="2" y="3" width="16" height="14" rx="2"/><path d="M2 7h16"/></svg></div>
+      <div>
+        <h4>Web Designers & Agencies</h4>
+        <p>You build sites for product businesses all the time. When a client asks for pricing tools, quote calculators, or interactive product pages — that's a configurator opportunity.</p>
+      </div>
+    </div>
+    <div class="who-item reveal">
+      <div class="who-icon"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" width="18" height="18"><path d="M10 2l2 6h6l-5 4 2 6-5-4-5 4 2-6-5-4h6z"/></svg></div>
+      <div>
+        <h4>Marketing Consultants</h4>
+        <p>Your clients want more qualified leads. A 3D configurator on their site turns tire-kickers into buyers before anyone picks up the phone. Easy referral story to tell.</p>
+      </div>
+    </div>
+    <div class="who-item reveal">
+      <div class="who-icon"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" width="18" height="18"><circle cx="10" cy="7" r="4"/><path d="M2 18c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+      <div>
+        <h4>Sales Reps & Consultants</h4>
+        <p>Know anyone in deck, pergola, shed, furniture, machinery, or home improvement? Those are our best verticals — and they're everywhere.</p>
+      </div>
+    </div>
+    <div class="who-item reveal">
+      <div class="who-icon"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.4" width="18" height="18"><path d="M4 4h12v12H4z"/><path d="M8 4v12M4 8h12"/></svg></div>
+      <div>
+        <h4>Former Clients</h4>
+        <p>Already worked with us? You know the quality. If a peer or supplier could benefit from the same tool, tell them — and earn for it.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TERMS -->
+<div class="terms-section">
+  <div class="section-label-row reveal">The Fine Print</div>
+  <h2 class="section-title reveal">Simple terms. <em>Nothing hidden.</em></h2>
+  <div class="terms-box reveal">
+    <div class="term-item">
+      <div class="term-dot"></div>
+      <div class="term-text"><strong>$500 per referral</strong>, paid when the referred client's deposit clears. No cap — refer 10 clients, earn $5,000.</div>
+    </div>
+    <div class="term-item">
+      <div class="term-dot"></div>
+      <div class="term-text"><strong>Register before they sign up.</strong> Referrals must be submitted before the client contacts us independently to count.</div>
+    </div>
+    <div class="term-item">
+      <div class="term-dot"></div>
+      <div class="term-text"><strong>Paid via e-transfer, PayPal, or Stripe.</strong> Your choice. Takes 5 business days after project deposit.</div>
+    </div>
+    <div class="term-item">
+      <div class="term-dot"></div>
+      <div class="term-text"><strong>No referral account needed.</strong> Just email us with the lead info. We track it manually and proactively pay you.</div>
+    </div>
+    <div class="term-item">
+      <div class="term-dot"></div>
+      <div class="term-text"><strong>No exclusivity.</strong> Refer to as many clients as you want. Each qualifying referral earns separately.</div>
+    </div>
+    <div class="term-item">
+      <div class="term-dot"></div>
+      <div class="term-text"><strong>Questions?</strong> Email ishanjot@outlook.com or book a quick call — we're straightforward to work with.</div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="referral-cta reveal">
+  <h2>Know someone who<br>could use <em>this?</em></h2>
+  <p>Send us their name and we'll handle the rest. Takes two minutes.</p>
+  <div class="referral-cta-buttons">
+    <a href="mailto:ishanjot@outlook.com?subject=Referral" class="btn-primary"><span>Submit a Referral</span><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 6.5h9M6.5 2l4.5 4.5-4.5 4.5" stroke="currentColor" stroke-width="1.2"/></svg></a>
+    <a href="contact.html" class="btn-ghost">Start Your Own Project →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-left">
+    <img class="footer-logo" src="logo.png" alt="Precision 3D Technologies">
+    <div>
+      <div class="footer-brand-name">Precision 3D Technologies</div>
+      <div class="footer-brand-sub">© 2026 Ishanjot Dhahan · Toronto, Ontario, Canada</div>
+    </div>
+  </div>
+  <ul class="footer-links">
+    <li><a href="/#configurators">Demos</a></li>
+    <li><a href="/#pricing">Pricing</a></li>
+    <li><a href="/case-studies">Case Studies</a></li>
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="privacy.html">Privacy</a></li>
+    <li><a href="terms.html">Terms</a></li>
+  </ul>
+</footer>
+
+<script>
+const cursor=document.getElementById("cursor");const ring=document.getElementById("cursorRing");
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener("mousemove",e=>{mx=e.clientX;my=e.clientY});
+function animateCursor(){rx+=(mx-rx)*0.12;ry+=(my-ry)*0.12;cursor.style.left=mx+"px";cursor.style.top=my+"px";ring.style.left=rx+"px";ring.style.top=ry+"px";requestAnimationFrame(animateCursor);}
+animateCursor();
+document.querySelectorAll("a,button").forEach(el=>{el.addEventListener("mouseenter",()=>{ring.style.width="52px";ring.style.height="52px";ring.style.borderColor="rgba(201,169,110,0.9)";cursor.classList.add("hovering")});el.addEventListener("mouseleave",()=>{ring.style.width="32px";ring.style.height="32px";ring.style.borderColor="rgba(201,169,110,0.4)";cursor.classList.remove("hovering")});});
+window.addEventListener("scroll",()=>document.getElementById("mainNav").classList.toggle("scrolled",window.scrollY>80));
+const obs=new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add("visible"),i*70)});},{threshold:0.07});
+document.querySelectorAll(".reveal").forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

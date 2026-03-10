@@ -339,6 +339,13 @@ nav.scrolled{padding:16px 56px;background:rgba(8,8,8,0.96)}
 .pricing-cta::before{content:"";position:absolute;inset:0;background:var(--surface3);transform:translateX(-101%);transition:transform 0.28s}
 .pricing-cta:hover::before{transform:translateX(0)}
 .pricing-cta:hover{color:var(--white)}
+.price-pay-btn{display:block;width:100%;margin-top:28px;font-family:var(--mono);font-size:12px;letter-spacing:0.18em;text-transform:uppercase;padding:13px 20px;text-align:center;text-decoration:none;transition:all 0.25s;position:relative;overflow:hidden;cursor:none}
+.price-pay-btn.stripe-btn{background:var(--gold);color:var(--black)}
+.price-pay-btn.stripe-btn::before{content:"";position:absolute;inset:0;background:var(--surface3);transform:translateX(-101%);transition:transform 0.28s cubic-bezier(0.16,1,0.3,1)}
+.price-pay-btn.stripe-btn:hover::before{transform:translateX(0)}.price-pay-btn.stripe-btn:hover{color:var(--white)}
+.price-pay-btn span{position:relative;z-index:1}
+.price-pay-btn.quote-btn{background:transparent;color:var(--white-dim);border:1px solid var(--border-bright)}
+.price-pay-btn.quote-btn:hover{border-color:var(--gold);color:var(--gold)}
 
 /* SOCIAL PROOF */
 .social-proof-section{padding:100px 0;border-top:1px solid var(--border)}
@@ -732,6 +739,17 @@ footer{padding:44px 56px;border-top:1px solid var(--border);display:flex;justify
 .tcard-avatar-lg.av-orange{background:linear-gradient(135deg,#f97316,#c2410c)}
 .tcard-avatar-lg.av-gold{background:linear-gradient(135deg,#c9a96e,#92681e)}
 .tcard-avatar-lg.av-slate{background:linear-gradient(135deg,#64748b,#1e293b)}
+/* logo avatar */
+.tcard-avatar-lg.av-logo{background:var(--surface3);border:1px solid rgba(255,255,255,0.1);overflow:hidden}
+.tcard-avatar-lg.av-logo img{width:100%;height:100%;object-fit:contain;padding:10px;border-radius:50%}
+/* client logos bar */
+.client-logos-bar{padding:32px 56px;border-bottom:1px solid var(--border)}
+.client-logos-label{font-family:var(--mono);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:var(--white-dimmer);margin-bottom:20px;text-align:center}
+.client-logos-row{display:flex;align-items:center;justify-content:center;gap:0;flex-wrap:wrap}
+.client-logo-item{display:flex;align-items:center;justify-content:center;padding:12px 28px;border-right:1px solid var(--border);opacity:0.45;transition:opacity 0.25s,filter 0.25s;filter:grayscale(1) brightness(1.8)}
+.client-logo-item:last-child{border-right:none}
+.client-logo-item:hover{opacity:0.85;filter:grayscale(0.2) brightness(1.2)}
+.client-logo-item img{height:28px;max-width:100px;object-fit:contain;display:block}
 /* keep old avatar classes for any legacy use */
 .tcard-avatar.av-blue{background:linear-gradient(135deg,#3b82f6,#1d4ed8)}
 .tcard-avatar.av-green{background:linear-gradient(135deg,#10b981,#065f46)}
@@ -773,10 +791,9 @@ footer{padding:44px 56px;border-top:1px solid var(--border);display:flex;justify
   </a>
   <ul class="nav-links">
     <li><a href="#configurators">Demos</a></li>
-    <li><a href="#process">Process</a></li>
     <li><a href="#pricing">Pricing</a></li>
-    <li><a href="#results">Results</a></li>
-    <li><a href="#faq">FAQ</a></li>
+    <li><a href="case-studies.html">Case Studies</a></li>
+    <li><a href="blog/">Blog</a></li>
     <li><a href="contact.html" class="nav-cta">Start a Project</a></li>
   </ul>
 </nav>
@@ -921,6 +938,20 @@ footer{padding:44px 56px;border-top:1px solid var(--border);display:flex;justify
 <!-- SOCIAL PROOF -->
 <section class="social-proof-section" id="results">
   <div class="proof-intro reveal"><div class="section-label">02 — Results</div><h2 class="section-title">Real results,<br><em>real clients.</em></h2><p class="section-desc">8 businesses. Real results across industries.</p></div>
+  <div class="client-logos-bar reveal">
+    <div class="client-logos-label">Trusted by</div>
+    <div class="client-logos-row">
+      <div class="client-logo-item"><img src="mypergolas.png" alt="MyPergolas"></div>
+      <div class="client-logo-item"><img src="deckcraft.png" alt="DeckCraft Ontario"></div>
+      <div class="client-logo-item"><img src="lumiere.png" alt="Lumière Jewellery"></div>
+      <div class="client-logo-item"><img src="nauticraft.png" alt="NautiCraft Marine"></div>
+      <div class="client-logo-item"><img src="vortex.png" alt="Vortex Industrial"></div>
+      <div class="client-logo-item"><img src="forma%20homes.png" alt="Forma Homes"></div>
+      <div class="client-logo-item"><img src="novabuild.png" alt="NovaBuild PC"></div>
+      <div class="client-logo-item"><img src="axiom.png" alt="Axiom Fabrication"></div>
+    </div>
+  </div>
+
   <div class="tcard-grid reveal">
 
     <!-- 1: MyPergolas -->
@@ -962,7 +993,7 @@ footer{padding:44px 56px;border-top:1px solid var(--border);display:flex;justify
             </div>
           </div>
           <div class="tcard-attribution-panel">
-            <div class="tcard-avatar-lg av-gold"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" style="width:62%;height:62%"><rect x="3" y="15" width="42" height="3.5" fill="white" rx="1.2"/><rect x="3" y="8" width="3" height="10" fill="white" rx="1"/><rect x="11" y="8" width="3" height="10" fill="white" rx="1"/><rect x="19" y="8" width="3" height="10" fill="white" rx="1"/><rect x="27" y="8" width="3" height="10" fill="white" rx="1"/><rect x="35" y="8" width="3" height="10" fill="white" rx="1"/><rect x="42" y="8" width="3" height="10" fill="white" rx="1"/><rect x="7" y="18.5" width="3" height="23" fill="white" rx="1"/><rect x="38" y="18.5" width="3" height="23" fill="white" rx="1"/><rect x="18" y="18.5" width="3" height="20" fill="rgba(255,255,255,0.4)" rx="1"/><rect x="27" y="18.5" width="3" height="20" fill="rgba(255,255,255,0.4)" rx="1"/></svg></div>
+            <div class="tcard-avatar-lg av-logo"><img src="mypergolas.png" alt="MyPergolas"></div>
             <div class="tcard-attr-name">MyPergolas</div>
             <div class="tcard-attr-person">James R. — Owner</div>
             <div class="tcard-attr-title">Outdoor Structures · Ontario, CA</div>
@@ -1011,7 +1042,7 @@ footer{padding:44px 56px;border-top:1px solid var(--border);display:flex;justify
             </div>
           </div>
           <div class="tcard-attribution-panel">
-            <div class="tcard-avatar-lg av-blue"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" style="width:62%;height:62%"><rect x="4" y="7" width="40" height="7" rx="2" fill="white"/><rect x="4" y="17" width="40" height="7" rx="2" fill="white"/><rect x="4" y="27" width="40" height="7" rx="2" fill="white"/><rect x="4" y="37" width="40" height="7" rx="2" fill="white"/><rect x="16" y="5" width="2" height="40" rx="1" fill="rgba(0,0,0,0.2)"/><rect x="30" y="5" width="2" height="40" rx="1" fill="rgba(0,0,0,0.2)"/></svg></div>
+            <div class="tcard-avatar-lg av-logo"><img src="deckcraft.png" alt="DeckCraft Ontario"></div>
             <div class="tcard-attr-name">DeckCraft Ontario</div>
             <div class="tcard-attr-person">Mike T. — Co-Founder</div>
             <div class="tcard-attr-title">Custom Decks · Ontario</div>
@@ -1060,7 +1091,7 @@ footer{padding:44px 56px;border-top:1px solid var(--border);display:flex;justify
             </div>
           </div>
           <div class="tcard-attribution-panel">
-            <div class="tcard-avatar-lg av-purple"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" style="width:62%;height:62%"><path d="M24 6L10 20l14 22 14-22L24 6z" fill="white" fill-opacity="0.95"/><path d="M10 20h28" stroke="rgba(0,0,0,0.18)" stroke-width="1"/><path d="M16 13h16M24 6l-6 14M24 6l6 14" stroke="rgba(0,0,0,0.15)" stroke-width="1"/></svg></div>
+            <div class="tcard-avatar-lg av-logo"><img src="lumiere.png" alt="Lumière Jewellery"></div>
             <div class="tcard-attr-name">Lumière Jewellery</div>
             <div class="tcard-attr-person">Sophie D. — Creative Director</div>
             <div class="tcard-attr-title">Fine Jewellery · Toronto, ON</div>
@@ -1109,7 +1140,7 @@ footer{padding:44px 56px;border-top:1px solid var(--border);display:flex;justify
             </div>
           </div>
           <div class="tcard-attribution-panel">
-            <div class="tcard-avatar-lg av-teal"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" style="width:62%;height:62%"><circle cx="24" cy="11" r="5" stroke="white" stroke-width="2.5"/><line x1="24" y1="16" x2="24" y2="42" stroke="white" stroke-width="2.5" stroke-linecap="round"/><line x1="10" y1="22" x2="38" y2="22" stroke="white" stroke-width="2.5" stroke-linecap="round"/><path d="M10 22 Q6 36 24 42" stroke="white" stroke-width="2.5" stroke-linecap="round" fill="none"/><path d="M38 22 Q42 36 24 42" stroke="white" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg></div>
+            <div class="tcard-avatar-lg av-logo"><img src="nauticraft.png" alt="NautiCraft Marine"></div>
             <div class="tcard-attr-name">NautiCraft Marine</div>
             <div class="tcard-attr-person">Derek W. — Sales Director</div>
             <div class="tcard-attr-title">Luxury Boat Dealer · Vancouver, BC</div>
@@ -1158,7 +1189,7 @@ footer{padding:44px 56px;border-top:1px solid var(--border);display:flex;justify
             </div>
           </div>
           <div class="tcard-attribution-panel">
-            <div class="tcard-avatar-lg av-slate"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="white" style="width:62%;height:62%"><path d="M24 3l-2.5 5.5a13 13 0 00-4.8 2L11 8l-4 7 5 3.2A13 13 0 0011 24a13 13 0 00.9 3.6L7 31l4 7 5.7-2.5a13 13 0 004.8 2L24 43l2.5-5.5a13 13 0 004.8-2L37 38l4-7-5-3.4A13 13 0 0037 24a13 13 0 00-.9-3.6L41 17l-4-7-5.7 2.5a13 13 0 00-4.8-2L24 3z"/><circle cx="24" cy="24" r="7" fill="rgba(0,0,0,0.3)"/></svg></div>
+            <div class="tcard-avatar-lg av-logo"><img src="vortex.png" alt="Vortex Industrial"></div>
             <div class="tcard-attr-name">Vortex Industrial</div>
             <div class="tcard-attr-person">Alan C. — VP Sales</div>
             <div class="tcard-attr-title">Warehouse Machinery · Calgary, AB</div>
@@ -1207,7 +1238,7 @@ footer{padding:44px 56px;border-top:1px solid var(--border);display:flex;justify
             </div>
           </div>
           <div class="tcard-attribution-panel">
-            <div class="tcard-avatar-lg av-orange"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" style="width:62%;height:62%"><path d="M24 5L4 22h5v22h30V22h5L24 5z" fill="white" fill-opacity="0.95"/><rect x="19" y="30" width="10" height="14" rx="1" fill="rgba(0,0,0,0.22)"/><rect x="11" y="26" width="9" height="9" rx="1" fill="rgba(0,0,0,0.18)"/><rect x="28" y="26" width="9" height="9" rx="1" fill="rgba(0,0,0,0.18)"/></svg></div>
+            <div class="tcard-avatar-lg av-logo"><img src="forma%20homes.png" alt="Forma Homes"></div>
             <div class="tcard-attr-name">Forma Homes</div>
             <div class="tcard-attr-person">Rachel S. — Head of Sales</div>
             <div class="tcard-attr-title">Custom Home Builder · Toronto, ON</div>
@@ -1256,7 +1287,7 @@ footer{padding:44px 56px;border-top:1px solid var(--border);display:flex;justify
             </div>
           </div>
           <div class="tcard-attribution-panel">
-            <div class="tcard-avatar-lg av-blue"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" style="width:62%;height:62%"><rect x="14" y="14" width="20" height="20" rx="2.5" fill="white" fill-opacity="0.95"/><rect x="18" y="18" width="12" height="12" rx="1.5" fill="rgba(0,0,0,0.22)"/><line x1="9" y1="18" x2="14" y2="18" stroke="white" stroke-width="2.5" stroke-linecap="round"/><line x1="9" y1="24" x2="14" y2="24" stroke="white" stroke-width="2.5" stroke-linecap="round"/><line x1="9" y1="30" x2="14" y2="30" stroke="white" stroke-width="2.5" stroke-linecap="round"/><line x1="39" y1="18" x2="34" y2="18" stroke="white" stroke-width="2.5" stroke-linecap="round"/><line x1="39" y1="24" x2="34" y2="24" stroke="white" stroke-width="2.5" stroke-linecap="round"/><line x1="39" y1="30" x2="34" y2="30" stroke="white" stroke-width="2.5" stroke-linecap="round"/><line x1="18" y1="9" x2="18" y2="14" stroke="white" stroke-width="2.5" stroke-linecap="round"/><line x1="24" y1="9" x2="24" y2="14" stroke="white" stroke-width="2.5" stroke-linecap="round"/><line x1="30" y1="9" x2="30" y2="14" stroke="white" stroke-width="2.5" stroke-linecap="round"/><line x1="18" y1="39" x2="18" y2="34" stroke="white" stroke-width="2.5" stroke-linecap="round"/><line x1="24" y1="39" x2="24" y2="34" stroke="white" stroke-width="2.5" stroke-linecap="round"/><line x1="30" y1="39" x2="30" y2="34" stroke="white" stroke-width="2.5" stroke-linecap="round"/></svg></div>
+            <div class="tcard-avatar-lg av-logo"><img src="novabuild.png" alt="NovaBuild PC"></div>
             <div class="tcard-attr-name">NovaBuild PC</div>
             <div class="tcard-attr-person">Kevin L. — Founder</div>
             <div class="tcard-attr-title">Custom PC Builder · Mississauga, ON</div>
@@ -1305,7 +1336,7 @@ footer{padding:44px 56px;border-top:1px solid var(--border);display:flex;justify
             </div>
           </div>
           <div class="tcard-attribution-panel">
-            <div class="tcard-avatar-lg av-red"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" style="width:62%;height:62%"><path d="M36 6a10 10 0 00-9.5 13L8 37.5A3 3 0 1012.5 42L31 23.5A10 10 0 1036 6z" fill="white" fill-opacity="0.95"/><circle cx="36" cy="16" r="4" fill="rgba(0,0,0,0.2)"/><circle cx="10.5" cy="39.5" r="2" fill="rgba(0,0,0,0.25)"/></svg></div>
+            <div class="tcard-avatar-lg av-logo"><img src="axiom.png" alt="Axiom Fabrication"></div>
             <div class="tcard-attr-name">Axiom Fabrication</div>
             <div class="tcard-attr-person">Tony B. — Operations Lead</div>
             <div class="tcard-attr-title">Metal Fabrication · Hamilton, ON</div>
@@ -1457,9 +1488,9 @@ footer{padding:44px 56px;border-top:1px solid var(--border);display:flex;justify
 <section class="pricing-preview" id="pricing">
   <div class="section-header reveal"><div><div class="section-label">05 — Pricing</div><h2 class="section-title">Custom-built.<br><em>Fair pricing.</em></h2></div><p class="section-desc">Every project quoted individually. Typical ranges below.</p></div>
   <div class="pricing-cards">
-    <div class="price-card reveal"><div class="price-label">Simple Configurators</div><h4>Starter Build</h4><div class="price-amount">$2,500</div><div class="price-period">one-time build</div><p class="price-desc">Single product, up to 8 options. Fast to launch.</p><ul class="price-features"><li>Single product type</li><li>Up to 8 options</li><li>Real-time pricing</li><li>Lead capture form</li><li>2 rounds of revisions</li><li>Embed code for your site</li></ul></div>
-    <div class="price-card featured reveal"><div class="price-badge">Most Common</div><div class="price-label">Full-Featured Configurators</div><h4>Professional Build</h4><div class="price-amount">$5,000</div><div class="price-period">one-time + optional $150/mo support</div><p class="price-desc">Full features, analytics, integrations. Most popular tier.</p><ul class="price-features"><li>1–3 product types</li><li>Unlimited options</li><li>Custom pricing logic</li><li>CRM integration</li><li>Analytics dashboard</li><li>Quote PDF generation</li><li>Unlimited revisions</li><li>Priority support</li></ul></div>
-    <div class="price-card reveal"><div class="price-label">Complex Systems</div><h4>Enterprise Build</h4><div class="price-amount">$10K+</div><div class="price-period">project-based pricing</div><p class="price-desc">Multi-product platforms, API integrations, white-label, ongoing dev.</p><ul class="price-features"><li>Unlimited products</li><li>Custom features</li><li>API &amp; webhooks</li><li>Multi-location support</li><li>Inventory integration</li><li>White-label platform</li><li>Dedicated support</li><li>Monthly strategy calls</li></ul></div>
+    <div class="price-card reveal"><div class="price-label">Simple Configurators</div><h4>Starter Build</h4><div class="price-amount">$2,500</div><div class="price-period">one-time build</div><p class="price-desc">Single product, up to 8 options. Fast to launch.</p><ul class="price-features"><li>Single product type</li><li>Up to 8 options</li><li>Real-time pricing</li><li>Lead capture form</li><li>2 rounds of revisions</li><li>Embed code for your site</li></ul><a href="https://buy.stripe.com/YOUR_STARTER_LINK" target="_blank" rel="noopener" class="price-pay-btn stripe-btn"><span>Pay Deposit — Get Started</span></a></div>
+    <div class="price-card featured reveal"><div class="price-badge">Most Common</div><div class="price-label">Full-Featured Configurators</div><h4>Professional Build</h4><div class="price-amount">$5,000</div><div class="price-period">one-time + optional $150/mo support</div><p class="price-desc">Full features, analytics, integrations. Most popular tier.</p><ul class="price-features"><li>1–3 product types</li><li>Unlimited options</li><li>Custom pricing logic</li><li>CRM integration</li><li>Analytics dashboard</li><li>Quote PDF generation</li><li>Unlimited revisions</li><li>Priority support</li></ul><a href="https://buy.stripe.com/YOUR_PRO_LINK" target="_blank" rel="noopener" class="price-pay-btn stripe-btn"><span>Pay Deposit — Get Started</span></a></div>
+    <div class="price-card reveal"><div class="price-label">Complex Systems</div><h4>Enterprise Build</h4><div class="price-amount">$10K+</div><div class="price-period">project-based pricing</div><p class="price-desc">Multi-product platforms, API integrations, white-label, ongoing dev.</p><ul class="price-features"><li>Unlimited products</li><li>Custom features</li><li>API &amp; webhooks</li><li>Multi-location support</li><li>Inventory integration</li><li>White-label platform</li><li>Dedicated support</li><li>Monthly strategy calls</li></ul><a href="contact.html" class="price-pay-btn quote-btn">Request a Custom Quote →</a></div>
   </div>
   <div class="pricing-cta-wrap reveal"><a href="contact.html" class="pricing-cta">Get a Custom Quote →</a></div>
 
@@ -1565,6 +1596,9 @@ footer{padding:44px 56px;border-top:1px solid var(--border);display:flex;justify
   <ul class="footer-links">
     <li><a href="#configurators">Demos</a></li>
     <li><a href="#pricing">Pricing</a></li>
+    <li><a href="case-studies.html">Case Studies</a></li>
+    <li><a href="blog/">Blog</a></li>
+    <li><a href="referral.html">Referral</a></li>
     <li><a href="contact.html">Contact</a></li>
     <li><a href="https://mypergola.lovable.app/configurator" target="_blank">Live Demo</a></li>
     <li><a href="privacy.html">Privacy</a></li>
@@ -1740,6 +1774,27 @@ document.querySelectorAll(".faq-q").forEach(btn=>{
     setTimeout(()=>banner.remove(),500);
   });
 })();
+</script>
+
+<!-- Calendly Conversion Tracking — fires GA4 event when someone books -->
+<script>
+window.addEventListener("message",function(e){
+  if(e.data.event&&e.data.event==="calendly.event_scheduled"){
+    if(typeof gtag==="function"){
+      gtag("event","calendly_booking",{
+        event_category:"conversion",
+        event_label:"Calendly — Meeting Booked"
+      });
+    }
+  }
+});
+</script>
+
+<!-- Crisp Live Chat — replace YOUR_WEBSITE_ID with your Crisp site ID from crisp.chat -->
+<script type="text/javascript">
+window.$crisp=[];window.CRISP_WEBSITE_ID="YOUR_WEBSITE_ID";
+(function(){var d=document;var s=d.createElement("script");
+s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
 </script>
 
 <!-- Cookie Banner -->

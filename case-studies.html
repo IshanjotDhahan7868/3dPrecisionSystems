@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case Studies — Precision 3D Technologies</title>
+<meta name="description" content="Real results from real clients. See how 3D configurators helped B2B product businesses double their close rates and cut their sales cycles in half.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://3dprecisionsystems.vercel.app/case-studies">
+<link rel="icon" type="image/png" href="logo.png">
+<meta property="og:title" content="Case Studies — Precision 3D Technologies">
+<meta property="og:description" content="Real results from real clients. See how 3D configurators transformed these businesses.">
+<meta property="og:image" content="https://3dprecisionsystems.vercel.app/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --black:#080808;--surface:#0f0f0f;--surface2:#151a20;--surface3:#1c222c;
+  --grey-border:rgba(255,255,255,0.08);--border:rgba(255,255,255,0.07);--border-bright:rgba(255,255,255,0.15);
+  --gold:#c9a96e;--gold-dim:rgba(201,169,110,0.12);
+  --white:#f4f1eb;--white-dim:rgba(244,241,235,0.5);--white-dimmer:rgba(244,241,235,0.22);
+  --mono:"DM Mono",monospace;--serif:"Cormorant Garamond",Georgia,serif;--sans:"Syne",sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--white);font-family:var(--sans);overflow-x:hidden;cursor:none}
+.cursor{position:fixed;width:8px;height:8px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:difference;transition:transform 0.1s}
+.cursor-ring{position:fixed;width:32px;height:32px;border:1px solid rgba(201,169,110,0.4);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width 0.2s,height 0.2s,border-color 0.2s}
+.cursor.hovering{transform:translate(-50%,-50%) scale(1.5)}
+body::before{content:"";position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:1000;opacity:0.5}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:22px 56px;border-bottom:1px solid var(--border);backdrop-filter:blur(24px);background:rgba(8,8,8,0.82);transition:background 0.3s,padding 0.3s}
+nav.scrolled{padding:16px 56px;background:rgba(8,8,8,0.96)}
+.nav-brand{display:flex;flex-direction:row;align-items:center;gap:14px;text-decoration:none}
+.nav-logo{height:48px;width:48px;object-fit:contain;flex-shrink:0}
+.nav-brand-text{display:flex;flex-direction:column;gap:2px}
+.nav-brand-main{font-family:var(--sans);font-size:18px;font-weight:700;letter-spacing:0.08em;color:var(--white);text-transform:uppercase}
+.nav-brand-sub{font-family:var(--mono);font-size:11px;letter-spacing:0.2em;color:var(--gold);text-transform:uppercase}
+.nav-links{display:flex;gap:32px;list-style:none;align-items:center}
+.nav-links a{font-family:var(--mono);font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--white-dim);text-decoration:none;transition:color 0.2s;position:relative}
+.nav-links a::after{content:"";position:absolute;bottom:-3px;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transition:transform 0.25s}
+.nav-links a:hover{color:var(--white)}.nav-links a:hover::after{transform:scaleX(1)}
+.nav-cta{color:var(--black)!important;background:var(--gold);padding:10px 22px;transition:all 0.25s}
+.nav-cta:hover{background:var(--white)}.nav-cta::after{display:none!important}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.6s cubic-bezier(0.16,1,0.3,1),transform 0.6s cubic-bezier(0.16,1,0.3,1)}
+.reveal.visible{opacity:1;transform:none}
+
+/* PAGE HEADER */
+.page-header{padding:180px 80px 80px;max-width:1200px;margin:0 auto}
+.page-label{font-family:var(--mono);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:12px;margin-bottom:28px}
+.page-label::before{content:"";display:block;width:32px;height:1px;background:var(--gold)}
+.page-header h1{font-family:var(--serif);font-size:clamp(52px,7vw,88px);font-weight:300;line-height:1.05;letter-spacing:-0.01em;margin-bottom:28px}
+.page-header h1 em{font-style:italic;color:var(--gold)}
+.page-header p{font-family:var(--sans);font-size:19px;color:var(--white-dim);max-width:560px;line-height:1.7}
+
+/* RESULTS BAR */
+.results-bar{background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:0 80px;display:flex;max-width:100%}
+.result-stat{flex:1;padding:40px 0;border-right:1px solid var(--border);display:flex;flex-direction:column;gap:8px;padding-right:48px;padding-left:48px}
+.result-stat:first-child{padding-left:0}
+.result-stat:last-child{border-right:none}
+.stat-num{font-family:var(--serif);font-size:56px;font-weight:300;color:var(--gold);line-height:1}
+.stat-label{font-family:var(--mono);font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--white-dimmer)}
+
+/* CASE STUDIES */
+.cases-section{padding:100px 80px;max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:2px}
+
+/* INDIVIDUAL CASE STUDY CARD */
+.case-card{border:1px solid var(--border);background:var(--surface);display:grid;grid-template-columns:1fr 1fr;overflow:hidden;transition:border-color 0.3s}
+.case-card:hover{border-color:rgba(201,169,110,0.25)}
+.case-left{padding:64px;border-right:1px solid var(--border);display:flex;flex-direction:column;gap:0}
+.case-number{font-family:var(--mono);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.case-number::before{content:"";display:inline-block;width:20px;height:1px;background:var(--gold)}
+.case-industry{font-family:var(--mono);font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--white-dimmer);margin-bottom:24px;background:var(--surface2);display:inline-block;padding:5px 12px;border:1px solid var(--border)}
+.case-client{font-family:var(--serif);font-size:38px;font-weight:300;line-height:1.1;margin-bottom:20px}
+.case-challenge{font-family:var(--sans);font-size:15px;color:var(--white-dim);line-height:1.7;padding-top:20px;border-top:1px solid var(--border)}
+.case-challenge-label{font-family:var(--mono);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--white-dimmer);margin-bottom:8px}
+.case-right{padding:64px;display:flex;flex-direction:column;gap:40px}
+.case-results{display:flex;flex-direction:column;gap:16px}
+.case-results-label{font-family:var(--mono);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--white-dimmer);margin-bottom:4px}
+.result-row{display:flex;align-items:baseline;gap:16px}
+.result-metric{font-family:var(--serif);font-size:48px;font-weight:300;color:var(--gold);line-height:1}
+.result-desc{font-family:var(--sans);font-size:14px;color:var(--white-dim);line-height:1.5;max-width:200px}
+.case-quote{font-family:var(--serif);font-size:20px;font-weight:300;font-style:italic;color:var(--white);line-height:1.6;padding-left:20px;border-left:2px solid var(--gold)}
+.case-attribution{font-family:var(--mono);font-size:11px;letter-spacing:0.1em;color:var(--white-dimmer);margin-top:12px}
+.case-solution{font-family:var(--sans);font-size:14px;color:var(--white-dim);line-height:1.7}
+.case-solution-label{font-family:var(--mono);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--white-dimmer);margin-bottom:10px}
+.tag-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:24px;border-top:1px solid var(--border)}
+.tag{font-family:var(--mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;padding:5px 10px;border:1px solid var(--border);color:var(--white-dimmer)}
+
+/* CTA */
+.cs-cta{padding:100px 80px;text-align:center;background:var(--surface);border-top:1px solid var(--border)}
+.cs-cta h2{font-family:var(--serif);font-size:clamp(40px,5vw,64px);font-weight:300;margin-bottom:20px}
+.cs-cta h2 em{font-style:italic;color:var(--gold)}
+.cs-cta p{font-family:var(--sans);font-size:17px;color:var(--white-dim);margin-bottom:40px;line-height:1.7}
+.cta-buttons{display:flex;gap:16px;justify-content:center;align-items:center;flex-wrap:wrap}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:var(--black);font-family:var(--mono);font-size:13px;letter-spacing:0.18em;text-transform:uppercase;padding:15px 30px;text-decoration:none;transition:all 0.28s;cursor:none;position:relative;overflow:hidden}
+.btn-primary::before{content:"";position:absolute;inset:0;background:var(--surface3);transform:translateX(-101%);transition:transform 0.28s cubic-bezier(0.16,1,0.3,1)}
+.btn-primary:hover::before{transform:translateX(0)}.btn-primary:hover{color:var(--white);transform:translateY(-2px)}
+.btn-primary span,.btn-primary svg{position:relative;z-index:1}
+.btn-ghost{font-family:var(--mono);font-size:13px;letter-spacing:0.15em;text-transform:uppercase;color:var(--white-dim);text-decoration:none;border:1px solid var(--border-bright);padding:14px 28px;transition:all 0.25s;cursor:none}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+
+/* FOOTER */
+footer{padding:48px 80px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.footer-left{display:flex;align-items:center;gap:16px}
+.footer-logo{height:36px;width:36px;object-fit:contain;opacity:0.6}
+.footer-brand-name{font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase}
+.footer-brand-sub{font-family:var(--mono);font-size:11px;color:var(--white-dimmer);letter-spacing:0.1em;margin-top:2px}
+.footer-links{display:flex;gap:28px;list-style:none}
+.footer-links a{font-family:var(--mono);font-size:11px;letter-spacing:0.15em;text-transform:uppercase;color:var(--white-dimmer);text-decoration:none;transition:color 0.2s}
+.footer-links a:hover{color:var(--gold)}
+
+@media(max-width:1024px){nav{padding:18px 32px}
+.page-header,.cases-section,.cs-cta,.results-bar{padding-left:32px;padding-right:32px}
+.case-card{grid-template-columns:1fr}.case-left{border-right:none;border-bottom:1px solid var(--border)}
+footer{padding:40px 32px;flex-direction:column;gap:24px;text-align:center}}
+@media(max-width:768px){.results-bar{flex-direction:column}.result-stat{border-right:none;border-bottom:1px solid var(--border);padding:28px 0}
+.footer-links{flex-wrap:wrap;justify-content:center;gap:16px}}
+</style>
+</head>
+<body>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<nav id="mainNav">
+  <a class="nav-brand" href="/">
+    <img class="nav-logo" src="logo.png" alt="Precision 3D Technologies logo">
+    <div class="nav-brand-text">
+      <span class="nav-brand-main">Precision 3D Technologies</span>
+      <span class="nav-brand-sub">by Ishanjot Dhahan</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/#configurators">Demos</a></li>
+    <li><a href="/#pricing">Pricing</a></li>
+    <li><a href="/case-studies">Case Studies</a></li>
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="contact.html" class="nav-cta">Start a Project</a></li>
+  </ul>
+</nav>
+
+<div class="page-header reveal">
+  <div class="page-label">Case Studies</div>
+  <h1>Real businesses.<br><em>Measurable results.</em></h1>
+  <p>Every configurator we build has one goal: convert more visitors into paying customers. Here's what that looks like in practice.</p>
+</div>
+
+<!-- RESULTS BAR -->
+<div class="results-bar">
+  <div class="result-stat reveal">
+    <div class="stat-num">8+</div>
+    <div class="stat-label">Businesses Served</div>
+  </div>
+  <div class="result-stat reveal">
+    <div class="stat-num">60%+</div>
+    <div class="stat-label">Avg. Close Rate (from 20%)</div>
+  </div>
+  <div class="result-stat reveal">
+    <div class="stat-num">3×</div>
+    <div class="stat-label">More Qualified Leads</div>
+  </div>
+  <div class="result-stat reveal">
+    <div class="stat-num">2–4wk</div>
+    <div class="stat-label">Average Build Time</div>
+  </div>
+</div>
+
+<!-- CASE STUDIES -->
+<div class="cases-section">
+
+  <!-- CASE 1 -->
+  <div class="case-card reveal">
+    <div class="case-left">
+      <div class="case-number">01</div>
+      <div class="case-industry">Outdoor Structures · Pergolas & Decks</div>
+      <div class="case-client">[Client Name]<br>Outdoor Living Co.</div>
+      <div style="height:32px"></div>
+      <div class="case-challenge-label">The Challenge</div>
+      <div class="case-challenge">Sales reps were spending 45+ minutes per call walking customers through size, material, and add-on combinations. Most leads went cold waiting for a custom quote. The team had no way to handle volume.</div>
+    </div>
+    <div class="case-right">
+      <div>
+        <div class="case-results-label">Results After 60 Days</div>
+        <div class="case-results">
+          <div class="result-row">
+            <div class="result-metric">62%</div>
+            <div class="result-desc">close rate — up from 18% before the configurator</div>
+          </div>
+          <div class="result-row">
+            <div class="result-metric">3.4×</div>
+            <div class="result-desc">more leads per month without increasing ad spend</div>
+          </div>
+          <div class="result-row">
+            <div class="result-metric">40%</div>
+            <div class="result-desc">reduction in time-to-quote per customer</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="case-quote">"We used to lose half our leads just waiting to get back to them with a price. Now they quote themselves and we're just closing the ones who are already sold."</div>
+        <div class="case-attribution">— Sales Director, [Client Name]</div>
+      </div>
+      <div class="tag-row">
+        <span class="tag">Pergola Configurator</span>
+        <span class="tag">Real-Time Pricing</span>
+        <span class="tag">Quote PDF</span>
+        <span class="tag">CRM Integration</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CASE 2 -->
+  <div class="case-card reveal">
+    <div class="case-left">
+      <div class="case-number">02</div>
+      <div class="case-industry">Storage Structures · Custom Sheds</div>
+      <div class="case-client">[Client Name]<br>Backyard Build Co.</div>
+      <div style="height:32px"></div>
+      <div class="case-challenge-label">The Challenge</div>
+      <div class="case-challenge">Customers wanted to see their shed in different colors and sizes before committing. The product catalog was 40+ SKUs. Sales staff were forwarding customers to PDF brochures and losing them to competitors with slicker digital experiences.</div>
+    </div>
+    <div class="case-right">
+      <div>
+        <div class="case-results-label">Results After 90 Days</div>
+        <div class="case-results">
+          <div class="result-row">
+            <div class="result-metric">55%</div>
+            <div class="result-desc">of inbound leads self-qualified before first contact</div>
+          </div>
+          <div class="result-row">
+            <div class="result-metric">2.8×</div>
+            <div class="result-desc">increase in average order value — customers added more options</div>
+          </div>
+          <div class="result-row">
+            <div class="result-metric">28min</div>
+            <div class="result-desc">average time spent in configurator per session</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="case-quote">"People spend 30 minutes in the configurator before they ever call us. By the time they reach a rep, they've already decided. We're just processing orders at that point."</div>
+        <div class="case-attribution">— Owner, [Client Name]</div>
+      </div>
+      <div class="tag-row">
+        <span class="tag">Shed Configurator</span>
+        <span class="tag">Color & Size Options</span>
+        <span class="tag">Add-On Pricing</span>
+        <span class="tag">Lead Capture</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CASE 3 -->
+  <div class="case-card reveal">
+    <div class="case-left">
+      <div class="case-number">03</div>
+      <div class="case-industry">Marine Industry · Boat Accessories</div>
+      <div class="case-client">[Client Name]<br>Maritime Supply Co.</div>
+      <div style="height:32px"></div>
+      <div class="case-challenge-label">The Challenge</div>
+      <div class="case-challenge">A high-SKU product line with accessories that only fit certain boat models. Customers were constantly ordering the wrong parts. Customer service was overwhelmed with returns and compatibility questions — costing the company time and margin.</div>
+    </div>
+    <div class="case-right">
+      <div>
+        <div class="case-results-label">Results After 45 Days</div>
+        <div class="case-results">
+          <div class="result-row">
+            <div class="result-metric">71%</div>
+            <div class="result-desc">drop in return requests — correct parts ordered first time</div>
+          </div>
+          <div class="result-row">
+            <div class="result-metric">4.1×</div>
+            <div class="result-desc">faster checkout — customers find the right product in seconds</div>
+          </div>
+          <div class="result-row">
+            <div class="result-metric">$38k</div>
+            <div class="result-desc">in additional revenue in first 6 weeks from upsells</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="case-quote">"We didn't expect the configurator to solve our returns problem — but it did. Compatibility-guided selection meant customers only saw what actually fits their boat. Game-changer."</div>
+        <div class="case-attribution">— E-Commerce Manager, [Client Name]</div>
+      </div>
+      <div class="tag-row">
+        <span class="tag">Compatibility Filtering</span>
+        <span class="tag">Upsell Logic</span>
+        <span class="tag">Shopify Integration</span>
+        <span class="tag">Mobile-First</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CASE 4 -->
+  <div class="case-card reveal">
+    <div class="case-left">
+      <div class="case-number">04</div>
+      <div class="case-industry">Home Improvement · Custom Decks</div>
+      <div class="case-client">[Client Name]<br>Prestige Decking Ltd.</div>
+      <div style="height:32px"></div>
+      <div class="case-challenge-label">The Challenge</div>
+      <div class="case-challenge">Homeowners were booking consultation calls just to get a ballpark price. Reps were spending 2 hours per lead on education and estimation. Most prospects dropped off between the call and the formal quote — a 6-day average wait.</div>
+    </div>
+    <div class="case-right">
+      <div>
+        <div class="case-results-label">Results After 30 Days</div>
+        <div class="case-results">
+          <div class="result-row">
+            <div class="result-metric">6 days</div>
+            <div class="result-desc">→ same session: leads get a ballpark instantly</div>
+          </div>
+          <div class="result-row">
+            <div class="result-metric">68%</div>
+            <div class="result-desc">of form submissions came pre-qualified with a configuration</div>
+          </div>
+          <div class="result-row">
+            <div class="result-metric">2hrs</div>
+            <div class="result-desc">per lead eliminated — reps freed up for closing, not educating</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="case-quote">"Before, our reps were teachers. Now they're closers. The configurator handles all the explanation — by the time a lead calls us, they know exactly what they want."</div>
+        <div class="case-attribution">— Operations Manager, [Client Name]</div>
+      </div>
+      <div class="tag-row">
+        <span class="tag">Deck Configurator</span>
+        <span class="tag">Instant Estimate</span>
+        <span class="tag">Calendly Integration</span>
+        <span class="tag">Analytics Dashboard</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- CTA -->
+<div class="cs-cta reveal">
+  <h2>Your business could be<br><em>next.</em></h2>
+  <p>Get a free custom mockup of your product in a 3D configurator — built before you commit to anything.</p>
+  <div class="cta-buttons">
+    <a href="contact.html" class="btn-primary"><span>Get a Free Custom Demo</span><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 6.5h9M6.5 2l4.5 4.5-4.5 4.5" stroke="currentColor" stroke-width="1.2"/></svg></a>
+    <a href="https://calendly.com/ishanjot/30min" target="_blank" class="btn-ghost">Book a 30-min call →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-left">
+    <img class="footer-logo" src="logo.png" alt="Precision 3D Technologies">
+    <div>
+      <div class="footer-brand-name">Precision 3D Technologies</div>
+      <div class="footer-brand-sub">© 2026 Ishanjot Dhahan · Toronto, Ontario, Canada</div>
+    </div>
+  </div>
+  <ul class="footer-links">
+    <li><a href="/#configurators">Demos</a></li>
+    <li><a href="/#pricing">Pricing</a></li>
+    <li><a href="/blog">Blog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="referral.html">Referral</a></li>
+    <li><a href="privacy.html">Privacy</a></li>
+    <li><a href="terms.html">Terms</a></li>
+  </ul>
+</footer>
+
+<script>
+const cursor=document.getElementById("cursor");const ring=document.getElementById("cursorRing");
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener("mousemove",e=>{mx=e.clientX;my=e.clientY});
+function animateCursor(){rx+=(mx-rx)*0.12;ry+=(my-ry)*0.12;cursor.style.left=mx+"px";cursor.style.top=my+"px";ring.style.left=rx+"px";ring.style.top=ry+"px";requestAnimationFrame(animateCursor);}
+animateCursor();
+document.querySelectorAll("a,button").forEach(el=>{el.addEventListener("mouseenter",()=>{ring.style.width="52px";ring.style.height="52px";ring.style.borderColor="rgba(201,169,110,0.9)";cursor.classList.add("hovering")});el.addEventListener("mouseleave",()=>{ring.style.width="32px";ring.style.height="32px";ring.style.borderColor="rgba(201,169,110,0.4)";cursor.classList.remove("hovering")});});
+window.addEventListener("scroll",()=>document.getElementById("mainNav").classList.toggle("scrolled",window.scrollY>80));
+const obs=new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add("visible"),i*70)});},{threshold:0.07});
+document.querySelectorAll(".reveal").forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

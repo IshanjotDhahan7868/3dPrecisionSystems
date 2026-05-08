@@ -408,7 +408,7 @@ nav.scrolled{padding:16px 56px;background:rgba(8,8,8,0.96)}
 
 /* MRR BAND */
 .mrr-band{margin:0 56px;padding:68px;border:1px solid var(--grey-border-mid);background:linear-gradient(135deg,rgba(201,169,110,0.04) 0%,rgba(8,8,8,0) 60%);display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;position:relative;overflow:hidden;margin-bottom:0}
-.mrr-band::before{content:"$150/mo";position:absolute;right:-10px;top:50%;transform:translateY(-50%);font-family:var(--serif);font-size:200px;font-weight:300;color:rgba(201,169,110,0.04);pointer-events:none;line-height:1}
+.mrr-band::before{content:"$497/mo";position:absolute;right:-10px;top:50%;transform:translateY(-50%);font-family:var(--serif);font-size:200px;font-weight:300;color:rgba(201,169,110,0.04);pointer-events:none;line-height:1}
 .mrr-eyebrow{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:18px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
 .mrr-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:livePulse 2s ease-in-out infinite;flex-shrink:0}
 .mrr-heading{font-family:var(--serif);font-size:clamp(40px,4.375vw,65px);font-weight:300;line-height:1.05;color:var(--white);margin-bottom:16px}
@@ -788,9 +788,157 @@ footer{border-top:1px solid var(--border);background:var(--surface)}
 .brand-film-unmute:hover{color:var(--gold);border-color:rgba(201,169,110,0.4)}
 @media(max-width:968px){.brand-film{padding:48px 24px}}
 
+
+
+
+
+
+
+/* ══════════════════════════════════════════════════════════════
+   SPLASH — Cinematic
+   ══════════════════════════════════════════════════════════════ */
+#splash {
+  position: fixed; inset: 0; z-index: 99999;
+  background: #000;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+#splash.exit {
+  opacity: 0;
+  transition: opacity 1.4s cubic-bezier(0.4,0,0.2,1);
+  pointer-events: none;
+}
+#splash-canvas {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+}
+/* letterbox bars */
+#splash-bar-top,#splash-bar-bot {
+  position: absolute; left: 0; right: 0; height: 0;
+  background: #000; z-index: 4;
+  transition: height 1.1s cubic-bezier(0.76,0,0.24,1);
+}
+#splash-bar-top { top: 0; }
+#splash-bar-bot { bottom: 0; }
+#splash-bar-top.open,#splash-bar-bot.open { height: 11vh; }
+
+/* centre stage */
+#splash-stage {
+  position: relative; z-index: 3;
+  display: flex; flex-direction: column;
+  align-items: center; gap: 0;
+  pointer-events: none;
+}
+
+/* studio label — tiny mono above */
+#splash-studio {
+  font-family: "DM Mono", monospace;
+  font-size: 9px; letter-spacing: 0.55em; text-transform: uppercase;
+  color: rgba(201,169,110,0.0);
+  margin-bottom: 28px;
+  transition: color 1s 0.1s ease, letter-spacing 1.2s 0.1s cubic-bezier(0.16,1,0.3,1);
+}
+#splash-studio.show {
+  color: rgba(201,169,110,0.55);
+  letter-spacing: 0.75em;
+}
+
+/* main title */
+#splash-title {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(52px, 7.5vw, 112px);
+  font-weight: 300;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #f4f1eb;
+  line-height: 1;
+  opacity: 0;
+  filter: blur(18px);
+  transform: scale(1.06);
+  transition: opacity 1.3s 0.05s cubic-bezier(0.16,1,0.3,1),
+              filter  1.3s 0.05s cubic-bezier(0.16,1,0.3,1),
+              transform 1.5s 0.05s cubic-bezier(0.16,1,0.3,1);
+  text-shadow:
+    0 0 80px rgba(201,169,110,0.15),
+    0 2px 40px rgba(0,0,0,0.8);
+}
+#splash-title.show {
+  opacity: 1; filter: blur(0px); transform: scale(1);
+}
+#splash-title em {
+  font-style: italic;
+  color: #c9a96e;
+  font-weight: 300;
+}
+
+/* gold rule */
+#splash-rule {
+  width: 0; height: 1px; margin: 20px 0;
+  background: linear-gradient(90deg, transparent, #c9a96e 40%, #c9a96e 60%, transparent);
+  transition: width 1.1s 0.5s cubic-bezier(0.16,1,0.3,1);
+}
+#splash-rule.show { width: min(320px, 40vw); }
+
+/* subtitle */
+#splash-sub {
+  font-family: "DM Mono", monospace;
+  font-size: clamp(8px, 1vw, 11px);
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: rgba(244,241,235,0);
+  transition: color 1s 0.7s ease, letter-spacing 1.2s 0.7s cubic-bezier(0.16,1,0.3,1);
+}
+#splash-sub.show {
+  color: rgba(244,241,235,0.35);
+  letter-spacing: 0.58em;
+}
+
+/* year tag bottom-right, like a film card */
+#splash-year {
+  position: absolute; bottom: 13vh; right: 6vw;
+  font-family: "DM Mono", monospace;
+  font-size: 9px; letter-spacing: 0.28em;
+  color: rgba(201,169,110,0);
+  transition: color 0.8s 1.2s ease;
+  z-index: 5;
+}
+#splash-year.show { color: rgba(201,169,110,0.4); }
+
+/* location tag bottom-left */
+#splash-loc {
+  position: absolute; bottom: 13vh; left: 6vw;
+  font-family: "DM Mono", monospace;
+  font-size: 9px; letter-spacing: 0.28em;
+  color: rgba(244,241,235,0);
+  transition: color 0.8s 1.2s ease;
+  z-index: 5;
+}
+#splash-loc.show { color: rgba(244,241,235,0.22); }
+
 </style>
 </head>
 <body>
+
+
+
+
+
+
+<!-- ══ SPLASH ══════════════════════════════════════════════════ -->
+<div id="splash">
+  <canvas id="splash-canvas"></canvas>
+  <div id="splash-bar-top"></div>
+  <div id="splash-bar-bot"></div>
+  <div id="splash-stage">
+    <div id="splash-studio">Precision 3D Technologies</div>
+    <div id="splash-title">3D&thinsp;<em>Precision</em></div>
+    <div id="splash-rule"></div>
+    <div id="splash-sub">Custom Configurators &nbsp;·&nbsp; Toronto</div>
+  </div>
+  <div id="splash-year">Est. 2024</div>
+  <div id="splash-loc">Toronto, Ontario &nbsp;— CA</div>
+</div>
+<!-- ════════════════════════════════════════════════════════════ -->
+
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursorRing"></div>
 
@@ -824,7 +972,8 @@ footer{border-top:1px solid var(--border);background:var(--surface)}
     <h1>Let Your Customers<br>Close <em>Themselves.</em></h1>
     <p class="hero-sub">With the use of our tools, customers can design, price, and quote themselves before they ever call you. Let your products do the talking.</p>
     <div class="hero-actions">
-      <a href="#configurators" class="btn-primary"><span>Try Live Demos</span><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 6.5h9M6.5 2l4.5 4.5-4.5 4.5" stroke="currentColor" stroke-width="1.2"/></svg></a>
+      <a href="contact.html" class="btn-primary"><span>Get My Free Mockup</span><svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 6.5h9M6.5 2l4.5 4.5-4.5 4.5" stroke="currentColor" stroke-width="1.2"/></svg></a>
+      <a href="#configurators" class="btn-ghost"><span>See Live Demos</span></a>
       <a href="contact.html" class="btn-ghost">Get a free custom demo →</a>
     </div>
   </div>
@@ -1501,8 +1650,8 @@ footer{border-top:1px solid var(--border);background:var(--surface)}
 <section class="pricing-preview" id="pricing">
   <div class="section-header reveal"><div><div class="section-label">05 — Pricing</div><h2 class="section-title">Custom-built.<br><em>Fair pricing.</em></h2></div><p class="section-desc">Every project quoted individually. Typical ranges below.</p></div>
   <div class="pricing-cards">
-    <div class="price-card reveal"><div class="price-label">Simple Configurators</div><h4>Starter Build</h4><div class="price-amount">$2,500</div><div class="price-period">one-time build</div><p class="price-desc">Single product, up to 8 options. Fast to launch.</p><ul class="price-features"><li>Single product type</li><li>Up to 8 options</li><li>Real-time pricing</li><li>Lead capture form</li><li>2 rounds of revisions</li><li>Embed code for your site</li></ul><a href="https://buy.stripe.com/YOUR_STARTER_LINK" target="_blank" rel="noopener" class="price-pay-btn stripe-btn"><span>Pay Deposit — Get Started</span></a></div>
-    <div class="price-card featured reveal"><div class="price-badge">Most Common</div><div class="price-label">Full-Featured Configurators</div><h4>Professional Build</h4><div class="price-amount">$5,000</div><div class="price-period">one-time + optional $150/mo support</div><p class="price-desc">Full features, analytics, integrations. Most popular tier.</p><ul class="price-features"><li>1–3 product types</li><li>Unlimited options</li><li>Custom pricing logic</li><li>CRM integration</li><li>Analytics dashboard</li><li>Quote PDF generation</li><li>Unlimited revisions</li><li>Priority support</li></ul><a href="https://buy.stripe.com/YOUR_PRO_LINK" target="_blank" rel="noopener" class="price-pay-btn stripe-btn"><span>Pay Deposit — Get Started</span></a></div>
+    <div class="price-card reveal"><div class="price-label">Simple Configurators</div><h4>Starter Build</h4><div class="price-amount">$2,500</div><div class="price-period">one-time build</div><p class="price-desc">Single product, up to 8 options. Fast to launch.</p><ul class="price-features"><li>Single product type</li><li>Up to 8 options</li><li>Real-time pricing</li><li>Lead capture form</li><li>2 rounds of revisions</li><li>Embed code for your site</li></ul><a href="contact.html?plan=starter" target="_blank" rel="noopener" class="price-pay-btn stripe-btn"><span>Pay Deposit — Get Started</span></a></div>
+    <div class="price-card featured reveal"><div class="price-badge">Most Common</div><div class="price-label">Full-Featured Configurators</div><h4>Professional Build</h4><div class="price-amount">$5,000</div><div class="price-period">one-time + $497/mo retainer</div><p class="price-desc">Full features, analytics, integrations. Most popular tier.</p><ul class="price-features"><li>1–3 product types</li><li>Unlimited options</li><li>Custom pricing logic</li><li>CRM integration</li><li>Analytics dashboard</li><li>Quote PDF generation</li><li>Unlimited revisions</li><li>Priority support</li></ul><a href="contact.html?plan=professional" target="_blank" rel="noopener" class="price-pay-btn stripe-btn"><span>Pay Deposit — Get Started</span></a></div>
     <div class="price-card reveal"><div class="price-label">Complex Systems</div><h4>Enterprise Build</h4><div class="price-amount">$10K+</div><div class="price-period">project-based pricing</div><p class="price-desc">Multi-product platforms, API integrations, white-label, ongoing dev.</p><ul class="price-features"><li>Unlimited products</li><li>Custom features</li><li>API &amp; webhooks</li><li>Multi-location support</li><li>Inventory integration</li><li>White-label platform</li><li>Dedicated support</li><li>Monthly strategy calls</li></ul><a href="contact.html" class="price-pay-btn quote-btn">Request a Custom Quote →</a></div>
   </div>
   <div class="pricing-cta-wrap reveal"><a href="contact.html" class="pricing-cta">Get a Custom Quote →</a></div>
@@ -1522,7 +1671,7 @@ footer{border-top:1px solid var(--border);background:var(--surface)}
       <div class="mrr-feature"><div class="mrr-check"><svg viewBox="0 0 16 16" fill="none"><polyline points="2 8 6 12 14 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></div><div><div class="mrr-feat-title">Pricing & option updates</div><div class="mrr-feat-sub">Add new products, adjust pricing, enable seasonal promos</div></div></div>
       <div class="mrr-feature"><div class="mrr-check"><svg viewBox="0 0 16 16" fill="none"><polyline points="2 8 6 12 14 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></div><div><div class="mrr-feat-title">Priority support & fixes</div><div class="mrr-feat-sub">Any issues resolved within 24 hours</div></div></div>
       <div class="mrr-feature"><div class="mrr-check"><svg viewBox="0 0 16 16" fill="none"><polyline points="2 8 6 12 14 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></div><div><div class="mrr-feat-title">Cancel anytime</div><div class="mrr-feat-sub">No lock-in. No annual contracts. Month-to-month.</div></div></div>
-      <div class="mrr-price-note">$150/mo · Cancel anytime</div>
+      <div class="mrr-price-note">$497/mo · Cancel anytime</div>
     </div>
   </div>
 </section>
@@ -1830,6 +1979,152 @@ document.querySelectorAll(".faq-q").forEach(btn=>{
     banner.classList.remove("visible");
     setTimeout(()=>banner.remove(),500);
   });
+})();
+</script>
+
+
+
+
+<script>
+(function () {
+  const splash  = document.getElementById('splash');
+  const canvas  = document.getElementById('splash-canvas');
+  const ctx     = canvas.getContext('2d');
+  const barT    = document.getElementById('splash-bar-top');
+  const barB    = document.getElementById('splash-bar-bot');
+  const studio  = document.getElementById('splash-studio');
+  const title   = document.getElementById('splash-title');
+  const rule    = document.getElementById('splash-rule');
+  const sub     = document.getElementById('splash-sub');
+  const year    = document.getElementById('splash-year');
+  const loc     = document.getElementById('splash-loc');
+
+  document.body.style.overflow = 'hidden';
+
+  let W, H;
+  function resize() {
+    W = canvas.width  = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  /* ── particles ── */
+  const N = 130;
+  const pts = Array.from({ length: N }, () => spawn(true));
+
+  function spawn(randomY) {
+    const gold = Math.random() < 0.22;
+    return {
+      x:  Math.random() * (W || 1400),
+      y:  randomY ? Math.random() * (H || 900) : (H || 900) + 4,
+      vx: (Math.random() - 0.5) * 0.14,
+      vy: -(0.10 + Math.random() * 0.20),
+      r:  0.5 + Math.random() * 1.3,
+      a:  0.06 + Math.random() * 0.32,
+      gold,
+      ph: Math.random() * Math.PI * 2,
+      ps: 0.010 + Math.random() * 0.016,
+    };
+  }
+
+  const START = performance.now();
+  /* timeline (ms) */
+  const T_BARS  = 60;    // letterbox in
+  const T_UI    = 420;   // text appears
+  const T_HOLD  = 3600;  // start exit
+  const T_FADE  = 1400;  // fade duration
+  let uiShown = false, exiting = false, raf;
+
+  function frame(now) {
+    const e = now - START;
+
+    /* canvas bg */
+    ctx.fillStyle = '#000';
+    ctx.fillRect(0, 0, W, H);
+
+    /* radial glow */
+    const g = ctx.createRadialGradient(W/2, H/2, 0, W/2, H/2, W * 0.65);
+    g.addColorStop(0, 'rgba(22,18,12,0.9)');
+    g.addColorStop(1, 'rgba(0,0,0,0)');
+    ctx.fillStyle = g;
+    ctx.fillRect(0, 0, W, H);
+
+    /* gold centre bloom */
+    const bloom = ctx.createRadialGradient(W/2, H/2, 0, W/2, H/2, W * 0.28);
+    const bAlpha = Math.min(0.06, (e - T_UI) / 2000 * 0.06);
+    bloom.addColorStop(0, `rgba(201,169,110,${bAlpha})`);
+    bloom.addColorStop(1, 'rgba(201,169,110,0)');
+    ctx.fillStyle = bloom;
+    ctx.fillRect(0, 0, W, H);
+
+    /* particles */
+    pts.forEach((p, i) => {
+      p.ph += p.ps;
+      const breathe = 0.65 + 0.35 * Math.sin(p.ph);
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = p.gold
+        ? `rgba(201,169,110,${p.a * breathe})`
+        : `rgba(200,205,215,${p.a * breathe * 0.45})`;
+      ctx.fill();
+
+      p.x += p.vx + (Math.random() - 0.5) * 0.03;
+      p.y += p.vy;
+      p.vx = Math.max(-0.22, Math.min(0.22, p.vx));
+      if (p.y < -4) pts[i] = spawn(false);
+    });
+
+    /* gold connection threads */
+    const golds = pts.filter(p => p.gold);
+    ctx.lineWidth = 0.35;
+    for (let a = 0; a < golds.length; a++) {
+      for (let b = a + 1; b < golds.length; b++) {
+        const dx = golds[a].x - golds[b].x;
+        const dy = golds[a].y - golds[b].y;
+        const d  = dx*dx + dy*dy;
+        if (d < 160*160) {
+          const t = 1 - Math.sqrt(d) / 160;
+          ctx.beginPath();
+          ctx.moveTo(golds[a].x, golds[a].y);
+          ctx.lineTo(golds[b].x, golds[b].y);
+          ctx.strokeStyle = `rgba(201,169,110,${0.09 * t})`;
+          ctx.stroke();
+        }
+      }
+    }
+
+    /* letterbox bars */
+    if (e > T_BARS) {
+      barT.classList.add('open');
+      barB.classList.add('open');
+    }
+
+    /* UI reveal */
+    if (e > T_UI && !uiShown) {
+      uiShown = true;
+      studio.classList.add('show');
+      title.classList.add('show');
+      rule.classList.add('show');
+      sub.classList.add('show');
+      year.classList.add('show');
+      loc.classList.add('show');
+    }
+
+    /* exit */
+    if (e >= T_HOLD && !exiting) {
+      exiting = true;
+      cancelAnimationFrame(raf);
+      splash.classList.add('exit');
+      document.body.style.overflow = '';
+      setTimeout(() => { splash.style.display = 'none'; }, T_FADE + 80);
+      return;
+    }
+
+    raf = requestAnimationFrame(frame);
+  }
+
+  raf = requestAnimationFrame(frame);
 })();
 </script>
 

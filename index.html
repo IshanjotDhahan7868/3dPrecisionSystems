@@ -914,6 +914,55 @@ footer{border-top:1px solid var(--border);background:var(--surface)}
 }
 #splash-loc.show { color: rgba(244,241,235,0.22); }
 
+/* DEMO PROOF BLOCK */
+.demo-proof-block{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:0 56px 4px;border:1px solid var(--border);background:var(--surface)}
+.demo-proof-content{padding:72px 64px;display:flex;flex-direction:column;justify-content:center;gap:0}
+.demo-proof-tag{font-family:var(--mono);font-size:14px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:8px}
+.demo-proof-tag::before{content:"";width:7px;height:7px;border-radius:50%;background:#4caf50;display:inline-block;animation:pulse 1.8s ease-in-out infinite}
+.demo-proof-title{font-family:var(--serif);font-size:clamp(32px,3.5vw,48px);font-weight:500;color:var(--white);line-height:1.2;letter-spacing:-0.01em;margin-bottom:18px}
+.demo-proof-desc{font-size:22px;color:var(--white-dim);line-height:1.7;margin-bottom:36px}
+.demo-proof-specs{display:flex;gap:40px;margin-bottom:44px;padding-bottom:40px;border-bottom:1px solid var(--border)}
+.demo-spec{display:flex;flex-direction:column;gap:4px}
+.demo-spec-val{font-family:var(--serif);font-size:32px;font-weight:600;color:var(--gold);line-height:1}
+.demo-spec-label{font-family:var(--mono);font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:var(--white-dimmer)}
+.demo-proof-cta{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:var(--black);font-family:var(--mono);font-size:15px;letter-spacing:0.16em;text-transform:uppercase;padding:18px 36px;text-decoration:none;font-weight:700;transition:all 0.25s;align-self:flex-start}
+.demo-proof-cta:hover{background:#f4f1eb;transform:translateY(-2px)}
+.demo-proof-frame{border-left:1px solid var(--border);background:var(--black);display:flex;flex-direction:column;overflow:hidden}
+.demo-browser-bar{display:flex;align-items:center;gap:12px;padding:14px 20px;background:#1a1a1a;border-bottom:1px solid #333;flex-shrink:0}
+.demo-browser-dots{display:flex;gap:6px}.demo-browser-dots span{width:10px;height:10px;border-radius:50%;background:#333}
+.demo-browser-dots span:nth-child(1){background:#ff5f56}.demo-browser-dots span:nth-child(2){background:#ffbd2e}.demo-browser-dots span:nth-child(3){background:#27c93f}
+.demo-browser-url{flex:1;background:#111;border:1px solid #2a2a2a;border-radius:4px;padding:6px 14px;font-family:var(--mono);font-size:13px;color:rgba(255,255,255,0.4);text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.demo-browser-lock{font-size:12px;opacity:0.4}
+.demo-browser-body{flex:1;display:flex;align-items:center;justify-content:center;padding:56px 40px;background:linear-gradient(135deg,#0d0d0d 0%,#111 50%,#0a0a0a 100%)}
+.demo-browser-inner{text-align:center;display:flex;flex-direction:column;align-items:center;gap:20px}
+.demo-ph-icon{font-size:48px;opacity:0.15}
+.demo-ph-text{font-family:var(--serif);font-size:26px;color:rgba(255,255,255,0.5);letter-spacing:-0.01em}
+.demo-ph-sub{font-family:var(--mono);font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(201,169,110,0.5)}
+.demo-ph-btn{display:inline-flex;align-items:center;gap:8px;background:rgba(201,169,110,0.12);border:1px solid rgba(201,169,110,0.3);color:var(--gold);font-family:var(--mono);font-size:13px;letter-spacing:0.16em;text-transform:uppercase;padding:14px 28px;text-decoration:none;margin-top:8px;transition:all 0.25s}
+.demo-ph-btn:hover{background:rgba(201,169,110,0.2);border-color:var(--gold)}
+
+/* FOUNDING CLIENT */
+.founding-block{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:4px 56px 0;border:1px solid var(--border);background:var(--surface2)}
+.founding-left{padding:72px 64px;border-right:1px solid var(--border)}
+.founding-tag{font-family:var(--mono);font-size:13px;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
+.founding-title{font-family:var(--serif);font-size:clamp(30px,3.5vw,44px);font-weight:500;color:var(--white);line-height:1.2;letter-spacing:-0.01em;margin-bottom:20px}
+.founding-desc{font-size:21px;color:var(--white-dim);line-height:1.75}
+.founding-right{padding:72px 64px;display:flex;flex-direction:column;gap:36px}
+.founding-slots{}
+.founding-slot-label{font-family:var(--mono);font-size:13px;letter-spacing:0.16em;text-transform:uppercase;color:var(--white-dimmer);margin-bottom:16px}
+.founding-slot-row{display:flex;gap:12px;margin-bottom:12px}
+.founding-slot{width:52px;height:52px;border-radius:50%;border:1px solid rgba(201,169,110,0.4);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:15px;font-weight:500;color:rgba(201,169,110,0.6);background:rgba(201,169,110,0.06);transition:all 0.25s}
+.founding-slot:hover{border-color:var(--gold);color:var(--gold);background:rgba(201,169,110,0.12)}
+.founding-slot-note{font-family:var(--mono);font-size:13px;letter-spacing:0.1em;color:var(--white-dimmer)}
+.founding-perks{display:flex;flex-direction:column;gap:12px}
+.founding-perk{display:flex;align-items:center;gap:12px;font-size:20px;color:var(--white-dim)}
+.fp-check{width:22px;height:22px;background:rgba(201,169,110,0.1);border:1px solid rgba(201,169,110,0.3);display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--gold);flex-shrink:0}
+.founding-cta{display:inline-flex;align-items:center;gap:8px;background:transparent;border:1px solid var(--gold);color:var(--gold);font-family:var(--mono);font-size:14px;letter-spacing:0.16em;text-transform:uppercase;padding:16px 32px;text-decoration:none;transition:all 0.25s;align-self:flex-start}
+.founding-cta:hover{background:var(--gold);color:var(--black)}
+
+@media(max-width:968px){.demo-proof-block,.founding-block{grid-template-columns:1fr;margin:2px 24px}.demo-proof-frame{border-left:none;border-top:1px solid var(--border);min-height:280px}.founding-left{border-right:none;border-bottom:1px solid var(--border)}.demo-proof-specs{gap:24px}}
+@media(max-width:600px){.demo-proof-content,.founding-left,.founding-right{padding:48px 28px}.demo-proof-specs{flex-wrap:wrap;gap:20px}}
+
 </style>
 </head>
 <body>
@@ -1098,441 +1147,93 @@ footer{border-top:1px solid var(--border);background:var(--surface)}
   </div>
 </section>
 
-<!-- SOCIAL PROOF -->
+<!-- LIVE PROOF -->
 <section class="social-proof-section" id="results">
-  <div class="proof-intro reveal"><div class="section-label">02 — Results</div><h2 class="section-title">Demo builds,<br><em>real results.</em></h2><p class="section-desc">8 businesses. Real results across industries.</p></div>
-  <div class="client-logos-bar reveal">
-    <div class="client-logos-label">Industries we build for</div>
-    <div class="client-logos-row">
-      <div class="client-logo-item"><img src="mypergolas.png" alt="MyPergolas"></div>
-      <div class="client-logo-item"><img src="deckcraft.png" alt="DeckCraft Ontario"></div>
-      <div class="client-logo-item"><img src="lumiere.png" alt="Lumière Jewellery"></div>
-      <div class="client-logo-item"><img src="nauticraft.png" alt="NautiCraft Marine"></div>
-      <div class="client-logo-item"><img src="vortex.png" alt="Vortex Industrial"></div>
-      <div class="client-logo-item"><img src="forma%20homes.png" alt="Forma Homes"></div>
-      <div class="client-logo-item"><img src="novabuild.png" alt="NovaBuild PC"></div>
-      <div class="client-logo-item"><img src="axiom.png" alt="Axiom Fabrication"></div>
+
+  <div class="proof-intro reveal">
+    <div class="section-label">02 — Live Proof</div>
+    <h2 class="section-title">Don't take our word.<br><em>Try the tool.</em></h2>
+    <p class="section-desc">The best proof is a live demo. No fake screenshots. No AI renders. Click it yourself.</p>
+  </div>
+
+  <!-- LIVE DEMO BLOCK -->
+  <div class="demo-proof-block reveal">
+    <div class="demo-proof-content">
+      <div class="demo-proof-tag">Live &amp; working right now</div>
+      <h3 class="demo-proof-title">Pergola Lead Engine — Live Demo</h3>
+      <p class="demo-proof-desc">Built on our stack. Real 3D, real pricing, real lead capture. This exact tool goes on your website in 7 days, matched to your brand and product line.</p>
+      <div class="demo-proof-specs">
+        <div class="demo-spec"><span class="demo-spec-val">7 days</span><span class="demo-spec-label">to deploy</span></div>
+        <div class="demo-spec"><span class="demo-spec-val">Live $</span><span class="demo-spec-label">pricing engine</span></div>
+        <div class="demo-spec"><span class="demo-spec-val">100%</span><span class="demo-spec-label">your branding</span></div>
+      </div>
+      <a href="https://mypergola.lovable.app/configurator" target="_blank" class="demo-proof-cta">Open Live Demo →</a>
+    </div>
+    <div class="demo-proof-frame">
+      <div class="demo-browser-bar">
+        <div class="demo-browser-dots"><span></span><span></span><span></span></div>
+        <div class="demo-browser-url">mypergola.lovable.app/configurator</div>
+        <div class="demo-browser-lock">🔒</div>
+      </div>
+      <div class="demo-browser-body">
+        <div class="demo-browser-inner">
+          <div class="demo-ph-icon">⚙</div>
+          <div class="demo-ph-text">Interactive 3D Pergola Configurator</div>
+          <div class="demo-ph-sub">Real-time pricing · Lead capture · 3D visualization</div>
+          <a href="https://mypergola.lovable.app/configurator" target="_blank" class="demo-ph-btn">Launch →</a>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="tcard-grid reveal">
-
-    <!-- 1: MyPergolas -->
-    <div class="tcard" tabindex="0">
-      <video class="tcard-video" src="videos/poolfloatingshot.mp4" loop muted playsinline preload="metadata"></video>
-      <div class="tcard-noise"></div>
-      <div class="tcard-glow"></div>
-      <div class="tcard-overlay"></div>
-      <div class="tcard-pulse"></div>
-      <!-- COLLAPSED -->
-      <div class="tcard-collapsed">
-        <div class="tcard-collapsed-left">
-          <span class="tcard-industry-pill">Outdoor Structures · Ontario</span>
-          <div class="tcard-collapsed-name">MyPergolas</div>
-          <div class="tcard-collapsed-person">James R. — Owner</div>
-          <div class="tcard-collapsed-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-        </div>
-        <div class="tcard-collapsed-divider"></div>
-        <div class="tcard-collapsed-stat">
-          <div class="tcard-stat-number">3×</div>
-          <div class="tcard-stat-label">Close Rate</div>
-        </div>
-        <div class="tcard-collapsed-spacer"></div>
-        <div class="tcard-hover-hint">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/></svg>
-          Hover to watch
-        </div>
-      </div>
-      <!-- EXPANDED -->
-      <div class="tcard-expanded">
-        <div class="tcard-expanded-inner">
-          <div class="tcard-bigquote">"</div>
-          <div class="tcard-quote-center">
-            <p class="tcard-quote-text">Now customers arrive with their exact configuration already chosen. Close rate went from <em>20% to over 60%</em> — by the time they call, they've already sold themselves.</p>
-            <div class="tcard-before-after">
-              <span class="tcard-before">20% close rate</span>
-              <span class="tcard-arrow">→</span>
-              <span class="tcard-after">60%+ close rate</span>
-            </div>
-          </div>
-          <div class="tcard-attribution-panel">
-            <div class="tcard-avatar-lg av-logo"><img src="mypergolas.png" alt="MyPergolas"></div>
-            <div class="tcard-attr-name">MyPergolas</div>
-            <div class="tcard-attr-person">James R. — Owner</div>
-            <div class="tcard-attr-title">Outdoor Structures · Ontario, CA</div>
-            <div class="tcard-attr-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-            <div class="tcard-attr-badges">
-              <div class="tcard-verified-badge"><svg viewBox="0 0 16 16" fill="none"><polyline points="2 8 6 12 14 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Verified Client</div>
-              
-              <div class="tcard-duration-badge">March 2025 · 2 weeks</div>
-            </div>
-          </div>
-        </div>
-      </div>
+  <!-- STATS -->
+  <div class="results-bar reveal">
+    <div class="result-stat">
+      <div class="result-number">$15<span>B</span></div>
+      <div class="result-label">Outdoor Living Market — 2025</div>
     </div>
-
-    <!-- 2: DeckCraft -->
-    <div class="tcard" tabindex="0">
-      <video class="tcard-video" src="videos/basketballcourt.mp4" loop muted playsinline preload="metadata"></video>
-      <div class="tcard-noise"></div>
-      <div class="tcard-glow"></div>
-      <div class="tcard-overlay"></div>
-      <div class="tcard-pulse"></div>
-      <div class="tcard-collapsed">
-        <div class="tcard-collapsed-left">
-          <span class="tcard-industry-pill">Custom Decks · Ontario</span>
-          <div class="tcard-collapsed-name">DeckCraft Ontario</div>
-          <div class="tcard-collapsed-person">Mike T. — Co-Founder</div>
-          <div class="tcard-collapsed-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-        </div>
-        <div class="tcard-collapsed-divider"></div>
-        <div class="tcard-collapsed-stat">
-          <div class="tcard-stat-number">0</div>
-          <div class="tcard-stat-label">Manual Quotes Sent</div>
-        </div>
-        <div class="tcard-collapsed-spacer"></div>
-        <div class="tcard-hover-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/></svg>Hover to watch</div>
-      </div>
-      <div class="tcard-expanded">
-        <div class="tcard-expanded-inner">
-          <div class="tcard-bigquote">"</div>
-          <div class="tcard-quote-center">
-            <p class="tcard-quote-text">We were spending <em>12–15 hours a week</em> on quoting. Now customers configure it themselves and submit everything locked in. We haven't sent a manual quote in two months.</p>
-            <div class="tcard-before-after">
-              <span class="tcard-before">15 hrs/wk quoting</span>
-              <span class="tcard-arrow">→</span>
-              <span class="tcard-after">Zero manual quotes</span>
-            </div>
-          </div>
-          <div class="tcard-attribution-panel">
-            <div class="tcard-avatar-lg av-logo"><img src="deckcraft.png" alt="DeckCraft Ontario"></div>
-            <div class="tcard-attr-name">DeckCraft Ontario</div>
-            <div class="tcard-attr-person">Mike T. — Co-Founder</div>
-            <div class="tcard-attr-title">Custom Decks · Ontario</div>
-            <div class="tcard-attr-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-            <div class="tcard-attr-badges">
-              <div class="tcard-verified-badge"><svg viewBox="0 0 16 16" fill="none"><polyline points="2 8 6 12 14 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Verified Client</div>
-              
-              <div class="tcard-duration-badge">Feb 2025 · 3 weeks</div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="result-stat">
+      <div class="result-number">17<span>%</span></div>
+      <div class="result-label">Inquiry-to-Close With Configurator (vs 3% industry avg)</div>
     </div>
-
-    <!-- 3: Lumière Jewellery -->
-    <div class="tcard" tabindex="0">
-      <video class="tcard-video" src="videos/jewelryconfig.mp4" loop muted playsinline preload="metadata"></video>
-      <div class="tcard-noise"></div>
-      <div class="tcard-glow"></div>
-      <div class="tcard-overlay"></div>
-      <div class="tcard-pulse"></div>
-      <div class="tcard-collapsed">
-        <div class="tcard-collapsed-left">
-          <span class="tcard-industry-pill">Fine Jewellery · Toronto</span>
-          <div class="tcard-collapsed-name">Lumière Jewellery</div>
-          <div class="tcard-collapsed-person">Sophie D. — Creative Director</div>
-          <div class="tcard-collapsed-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-        </div>
-        <div class="tcard-collapsed-divider"></div>
-        <div class="tcard-collapsed-stat">
-          <div class="tcard-stat-number">+40%</div>
-          <div class="tcard-stat-label">Avg Order Value</div>
-        </div>
-        <div class="tcard-collapsed-spacer"></div>
-        <div class="tcard-hover-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/></svg>Hover to watch</div>
-      </div>
-      <div class="tcard-expanded">
-        <div class="tcard-expanded-inner">
-          <div class="tcard-bigquote">"</div>
-          <div class="tcard-quote-center">
-            <p class="tcard-quote-text">Our clients design their ring, choose the setting, metal, and stone in 3D — and submit ready to purchase. Returns dropped. <em>Average order value is up 40%.</em> It pays for itself every month.</p>
-            <div class="tcard-before-after">
-              <span class="tcard-before">High return rate</span>
-              <span class="tcard-arrow">→</span>
-              <span class="tcard-after">+40% avg order value</span>
-            </div>
-          </div>
-          <div class="tcard-attribution-panel">
-            <div class="tcard-avatar-lg av-logo"><img src="lumiere.png" alt="Lumière Jewellery"></div>
-            <div class="tcard-attr-name">Lumière Jewellery</div>
-            <div class="tcard-attr-person">Sophie D. — Creative Director</div>
-            <div class="tcard-attr-title">Fine Jewellery · Toronto, ON</div>
-            <div class="tcard-attr-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-            <div class="tcard-attr-badges">
-              <div class="tcard-verified-badge"><svg viewBox="0 0 16 16" fill="none"><polyline points="2 8 6 12 14 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Verified Client</div>
-              
-              <div class="tcard-duration-badge">Jul 2025 · 4 weeks</div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="result-stat">
+      <div class="result-number">7</div>
+      <div class="result-label">Days from deposit to live on your site</div>
     </div>
-
-    <!-- 4: NautiCraft Marine -->
-    <div class="tcard" tabindex="0">
-      <video class="tcard-video" src="videos/boatconfig.mp4" loop muted playsinline preload="metadata"></video>
-      <div class="tcard-noise"></div>
-      <div class="tcard-glow"></div>
-      <div class="tcard-overlay"></div>
-      <div class="tcard-pulse"></div>
-      <div class="tcard-collapsed">
-        <div class="tcard-collapsed-left">
-          <span class="tcard-industry-pill">Luxury Boats · Vancouver</span>
-          <div class="tcard-collapsed-name">NautiCraft Marine</div>
-          <div class="tcard-collapsed-person">Derek W. — Sales Director</div>
-          <div class="tcard-collapsed-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-        </div>
-        <div class="tcard-collapsed-divider"></div>
-        <div class="tcard-collapsed-stat">
-          <div class="tcard-stat-number">+55%</div>
-          <div class="tcard-stat-label">Showroom Conversion</div>
-        </div>
-        <div class="tcard-collapsed-spacer"></div>
-        <div class="tcard-hover-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/></svg>Hover to watch</div>
-      </div>
-      <div class="tcard-expanded">
-        <div class="tcard-expanded-inner">
-          <div class="tcard-bigquote">"</div>
-          <div class="tcard-quote-center">
-            <p class="tcard-quote-text">Boat buyers are serious people who hate wasting time. Now they configure hull colour, upholstery, engine package, and accessories themselves — and <em>arrive at the dealership with a printed spec sheet.</em> Showroom conversion is up 55%.</p>
-            <div class="tcard-before-after">
-              <span class="tcard-before">Unprepared buyers</span>
-              <span class="tcard-arrow">→</span>
-              <span class="tcard-after">+55% showroom conversion</span>
-            </div>
-          </div>
-          <div class="tcard-attribution-panel">
-            <div class="tcard-avatar-lg av-logo"><img src="nauticraft.png" alt="NautiCraft Marine"></div>
-            <div class="tcard-attr-name">NautiCraft Marine</div>
-            <div class="tcard-attr-person">Derek W. — Sales Director</div>
-            <div class="tcard-attr-title">Luxury Boat Dealer · Vancouver, BC</div>
-            <div class="tcard-attr-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-            <div class="tcard-attr-badges">
-              <div class="tcard-verified-badge"><svg viewBox="0 0 16 16" fill="none"><polyline points="2 8 6 12 14 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Verified Client</div>
-              
-              <div class="tcard-duration-badge">Dec 2024 · 5 weeks</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 5: Vortex Industrial -->
-    <div class="tcard" tabindex="0">
-      <video class="tcard-video" src="videos/warehousemachineconfig.mp4" loop muted playsinline preload="metadata"></video>
-      <div class="tcard-noise"></div>
-      <div class="tcard-glow"></div>
-      <div class="tcard-overlay"></div>
-      <div class="tcard-pulse"></div>
-      <div class="tcard-collapsed">
-        <div class="tcard-collapsed-left">
-          <span class="tcard-industry-pill">Warehouse Machinery · Calgary</span>
-          <div class="tcard-collapsed-name">Vortex Industrial</div>
-          <div class="tcard-collapsed-person">Alan C. — VP Sales</div>
-          <div class="tcard-collapsed-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-        </div>
-        <div class="tcard-collapsed-divider"></div>
-        <div class="tcard-collapsed-stat">
-          <div class="tcard-stat-number">6wk→10d</div>
-          <div class="tcard-stat-label">Sales Cycle</div>
-        </div>
-        <div class="tcard-collapsed-spacer"></div>
-        <div class="tcard-hover-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/></svg>Hover to watch</div>
-      </div>
-      <div class="tcard-expanded">
-        <div class="tcard-expanded-inner">
-          <div class="tcard-bigquote">"</div>
-          <div class="tcard-quote-center">
-            <p class="tcard-quote-text">Our machines have 200+ configuration variables. We used to need an engineer on every sales call. Now clients spec out the exact conveyor layout, motor ratings, and dimensions online. <em>Sales cycle dropped from 6 weeks to 10 days.</em></p>
-            <div class="tcard-before-after">
-              <span class="tcard-before">6-week sales cycle</span>
-              <span class="tcard-arrow">→</span>
-              <span class="tcard-after">10-day sales cycle</span>
-            </div>
-          </div>
-          <div class="tcard-attribution-panel">
-            <div class="tcard-avatar-lg av-logo"><img src="vortex.png" alt="Vortex Industrial"></div>
-            <div class="tcard-attr-name">Vortex Industrial</div>
-            <div class="tcard-attr-person">Alan C. — VP Sales</div>
-            <div class="tcard-attr-title">Warehouse Machinery · Calgary, AB</div>
-            <div class="tcard-attr-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-            <div class="tcard-attr-badges">
-              <div class="tcard-verified-badge"><svg viewBox="0 0 16 16" fill="none"><polyline points="2 8 6 12 14 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Verified Client</div>
-              
-              <div class="tcard-duration-badge">May 2025 · 6 weeks</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 6: Forma Homes -->
-    <div class="tcard" tabindex="0">
-      <video class="tcard-video" src="videos/houseconfig.mp4" loop muted playsinline preload="metadata"></video>
-      <div class="tcard-noise"></div>
-      <div class="tcard-glow"></div>
-      <div class="tcard-overlay"></div>
-      <div class="tcard-pulse"></div>
-      <div class="tcard-collapsed">
-        <div class="tcard-collapsed-left">
-          <span class="tcard-industry-pill">Custom Homes · Toronto</span>
-          <div class="tcard-collapsed-name">Forma Homes</div>
-          <div class="tcard-collapsed-person">Rachel S. — Head of Sales</div>
-          <div class="tcard-collapsed-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-        </div>
-        <div class="tcard-collapsed-divider"></div>
-        <div class="tcard-collapsed-stat">
-          <div class="tcard-stat-number">↓80%</div>
-          <div class="tcard-stat-label">Design Revisions</div>
-        </div>
-        <div class="tcard-collapsed-spacer"></div>
-        <div class="tcard-hover-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/></svg>Hover to watch</div>
-      </div>
-      <div class="tcard-expanded">
-        <div class="tcard-expanded-inner">
-          <div class="tcard-bigquote">"</div>
-          <div class="tcard-quote-center">
-            <p class="tcard-quote-text">Home buyers spend weeks going back and forth with our design team. We gave them the configurator and suddenly <em>they're showing up to consultations with the exterior, floor plan, and finishes already chosen.</em> It changed everything about how we sell.</p>
-            <div class="tcard-before-after">
-              <span class="tcard-before">Weeks of back-and-forth</span>
-              <span class="tcard-arrow">→</span>
-              <span class="tcard-after">Buyers arrive pre-decided</span>
-            </div>
-          </div>
-          <div class="tcard-attribution-panel">
-            <div class="tcard-avatar-lg av-logo"><img src="forma%20homes.png" alt="Forma Homes"></div>
-            <div class="tcard-attr-name">Forma Homes</div>
-            <div class="tcard-attr-person">Rachel S. — Head of Sales</div>
-            <div class="tcard-attr-title">Custom Home Builder · Toronto, ON</div>
-            <div class="tcard-attr-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-            <div class="tcard-attr-badges">
-              <div class="tcard-verified-badge"><svg viewBox="0 0 16 16" fill="none"><polyline points="2 8 6 12 14 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Verified Client</div>
-              
-              <div class="tcard-duration-badge">Oct 2024 · 5 weeks</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 7: NovaBuild PC -->
-    <div class="tcard" tabindex="0">
-      <video class="tcard-video" src="videos/pcconfig.mp4" loop muted playsinline preload="metadata"></video>
-      <div class="tcard-noise"></div>
-      <div class="tcard-glow"></div>
-      <div class="tcard-overlay"></div>
-      <div class="tcard-pulse"></div>
-      <div class="tcard-collapsed">
-        <div class="tcard-collapsed-left">
-          <span class="tcard-industry-pill">Custom PC Builder · Mississauga</span>
-          <div class="tcard-collapsed-name">NovaBuild PC</div>
-          <div class="tcard-collapsed-person">Kevin L. — Founder</div>
-          <div class="tcard-collapsed-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-        </div>
-        <div class="tcard-collapsed-divider"></div>
-        <div class="tcard-collapsed-stat">
-          <div class="tcard-stat-number">61%</div>
-          <div class="tcard-stat-label">Add-on Attach Rate</div>
-        </div>
-        <div class="tcard-collapsed-spacer"></div>
-        <div class="tcard-hover-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/></svg>Hover to watch</div>
-      </div>
-      <div class="tcard-expanded">
-        <div class="tcard-expanded-inner">
-          <div class="tcard-bigquote">"</div>
-          <div class="tcard-quote-center">
-            <p class="tcard-quote-text">PC buyers want to see exactly what they're getting before they spend $3K. The 3D configurator lets them swap GPU, case, lighting, and cooling in real time — and the price updates live. <em>Our add-on attach rate went from 18% to 61%.</em></p>
-            <div class="tcard-before-after">
-              <span class="tcard-before">18% attach rate</span>
-              <span class="tcard-arrow">→</span>
-              <span class="tcard-after">61% attach rate</span>
-            </div>
-          </div>
-          <div class="tcard-attribution-panel">
-            <div class="tcard-avatar-lg av-logo"><img src="novabuild.png" alt="NovaBuild PC"></div>
-            <div class="tcard-attr-name">NovaBuild PC</div>
-            <div class="tcard-attr-person">Kevin L. — Founder</div>
-            <div class="tcard-attr-title">Custom PC Builder · Mississauga, ON</div>
-            <div class="tcard-attr-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-            <div class="tcard-attr-badges">
-              <div class="tcard-verified-badge"><svg viewBox="0 0 16 16" fill="none"><polyline points="2 8 6 12 14 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Verified Client</div>
-              <div class="tcard-duration-badge">Sep 2024 · 3 weeks</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 8: Axiom Fabrication -->
-    <div class="tcard" tabindex="0">
-      <video class="tcard-video" src="videos/weirdmetalthingconfig.mp4" loop muted playsinline preload="metadata"></video>
-      <div class="tcard-noise"></div>
-      <div class="tcard-glow"></div>
-      <div class="tcard-overlay"></div>
-      <div class="tcard-pulse"></div>
-      <div class="tcard-collapsed">
-        <div class="tcard-collapsed-left">
-          <span class="tcard-industry-pill">Metal Fabrication · Hamilton</span>
-          <div class="tcard-collapsed-name">Axiom Fabrication</div>
-          <div class="tcard-collapsed-person">Tony B. — Operations Lead</div>
-          <div class="tcard-collapsed-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-        </div>
-        <div class="tcard-collapsed-divider"></div>
-        <div class="tcard-collapsed-stat">
-          <div class="tcard-stat-number">3d→20m</div>
-          <div class="tcard-stat-label">Quote Time</div>
-        </div>
-        <div class="tcard-collapsed-spacer"></div>
-        <div class="tcard-hover-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/></svg>Hover to watch</div>
-      </div>
-      <div class="tcard-expanded">
-        <div class="tcard-expanded-inner">
-          <div class="tcard-bigquote">"</div>
-          <div class="tcard-quote-center">
-            <p class="tcard-quote-text">We fabricate custom structural components — no two orders are the same. The configurator handles alloy selection, tolerances, cut patterns, and finish in 3D. <em>It cut our quoting time from 3 days to 20 minutes</em> and our error rate on orders dropped to near zero.</p>
-            <div class="tcard-before-after">
-              <span class="tcard-before">3-day quote turnaround</span>
-              <span class="tcard-arrow">→</span>
-              <span class="tcard-after">20-minute quotes</span>
-            </div>
-          </div>
-          <div class="tcard-attribution-panel">
-            <div class="tcard-avatar-lg av-logo"><img src="axiom.png" alt="Axiom Fabrication"></div>
-            <div class="tcard-attr-name">Axiom Fabrication</div>
-            <div class="tcard-attr-person">Tony B. — Operations Lead</div>
-            <div class="tcard-attr-title">Metal Fabrication · Hamilton, ON</div>
-            <div class="tcard-attr-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
-            <div class="tcard-attr-badges">
-              <div class="tcard-verified-badge"><svg viewBox="0 0 16 16" fill="none"><polyline points="2 8 6 12 14 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Verified Client</div>
-              
-              <div class="tcard-duration-badge">Jan 2025 · 4 weeks</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </div>  </div>
-  <div class="client-signal reveal">
-    <div class="client-signal-inner">
-      <span class="client-signal-dot"></span>
-      <span>2–3 configurators currently live &amp; generating leads · <strong>Currently accepting new clients</strong></span>
-    </div>
-  </div>
-  <div class="mid-cta-bar reveal">
-    <div class="mid-cta-left">
-      <div class="mid-cta-headline">These numbers could be yours in 4 weeks.</div>
-      <div class="mid-cta-sub">Free custom demo before you spend a cent. No commitment.</div>
-    </div>
-    <div class="mid-cta-buttons">
-      <a href="contact.html" class="btn-cta-green">Get Your Free Custom Demo →</a>
-      <a href="#configurators" class="btn-cta-ghost">See Live Demos ↓</a>
+    <div class="result-stat">
+      <div class="result-number">$0</div>
+      <div class="result-label">Charged if under 3 qualified leads in 30 days</div>
     </div>
   </div>
 
-
-
+  <!-- FOUNDING CLIENT PROGRAM -->
+  <div class="founding-block reveal">
+    <div class="founding-left">
+      <div class="founding-tag">Q2 2026 · Founding Client Program</div>
+      <h3 class="founding-title">Taking 5 founding clients<br>this quarter.</h3>
+      <p class="founding-desc">Precision 3D is a new company. I don't have 50 testimonials — I have a working product, a performance guarantee, and 5 open spots. Founding clients get direct access to me, founding-locked pricing, and their results documented publicly once live.</p>
+    </div>
+    <div class="founding-right">
+      <div class="founding-slots">
+        <div class="founding-slot-label">Available spots — Q2 2026</div>
+        <div class="founding-slot-row">
+          <div class="founding-slot"><span>1</span></div>
+          <div class="founding-slot"><span>2</span></div>
+          <div class="founding-slot"><span>3</span></div>
+          <div class="founding-slot"><span>4</span></div>
+          <div class="founding-slot"><span>5</span></div>
+        </div>
+        <div class="founding-slot-note">All 5 spots open · First to pay secures the spot.</div>
+      </div>
+      <div class="founding-perks">
+        <div class="founding-perk"><span class="fp-check">✓</span> Founding setup price locked forever</div>
+        <div class="founding-perk"><span class="fp-check">✓</span> Direct WhatsApp access to Ishan</div>
+        <div class="founding-perk"><span class="fp-check">✓</span> Results published as a case study once live</div>
+        <div class="founding-perk"><span class="fp-check">✓</span> First-priority build queue</div>
+      </div>
+      <a href="contact.html#calendly" class="founding-cta">Claim a Spot →</a>
+    </div>
+  </div>
 
 </section>
 
